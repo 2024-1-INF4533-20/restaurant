@@ -235,3 +235,38 @@ a {
     height: 40px;
     width: 40px;
   }
+
+  .card{
+    margin: 10px;
+    height: 400px;
+    width: 300px;
+  }
+
+  .card .btn{
+    background-color: tomato;
+    color: white;
+    position: absolute;
+    bottom: 20px;
+  }
+
+  .card img {
+    max-height: 150px;
+  }
+
+  #paiementh1{
+    text-align: center;
+  }
+
+  #paiementh2{
+    text-align: center;
+  }
+  
+  #paiementform{
+    text-align: center;
+  }
+
+  .paiementlab{
+    display:inline-block;
+    width: 150px;
+    text-align: right;
+  }
