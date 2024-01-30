@@ -15,10 +15,15 @@ a {
         filter: drop-shadow(2px 2px 2px #222);
   }
 
-  #paiementh1{
-    text-align: center;
+  .card{
+    margin: 10px;
+    height: 400px;
+    width: 300px;
   }
 
-  #paiementform{
-    text-align: center;
+  .card .btn{
+    background-color: tomato;
+    color: white;
+    position: absolute;
+    bottom: 20px;
   }
