@@ -43,3 +43,9 @@ a {
   #paiementform{
     text-align: center;
   }
+
+  .paiementlab{
+    display:inline-block;
+    width: 150px;
+    text-align: right;
+  }
