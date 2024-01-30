@@ -14,3 +14,14 @@ a {
         -webkit-filter: drop-shadow(2px 2px 2px #222); 
         filter: drop-shadow(2px 2px 2px #222);
   }
+
+  .card{
+    margin: 10px;
+    height: 400px;
+    width: 300px;
+  }
+
+  .card .btn{
+    background-color: tomato;
+    color: white;
+  }
