@@ -24,4 +24,6 @@ a {
   .card .btn{
     background-color: tomato;
     color: white;
+    position: absolute;
+    bottom: 20px;
   }
