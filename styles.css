@@ -14,3 +14,11 @@ a {
         -webkit-filter: drop-shadow(2px 2px 2px #222); 
         filter: drop-shadow(2px 2px 2px #222);
   }
+
+  #paiementh1{
+    text-align: center;
+  }
+
+  #paiementform{
+    text-align: center;
+  }
