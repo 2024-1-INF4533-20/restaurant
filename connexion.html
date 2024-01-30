@@ -15,15 +15,64 @@
                 <a class="navbar-brand" href="#">Pizza Info</a>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="menu.html">Menu </a>
-                    <a class="nav-item nav-link " href="contact.html">Informations</a>
-                    <a class="nav-item nav-link" href="historique.html">Historique de commande</a>
-                    <a class="nav-item nav-link " href="panier.html">Mon panier</a>
-                    <a class="nav-item nav-link active" href="connexion.html">Connexion</a>
+                    <a id="connexion_a" class="nav-item nav-link" href="menu.html">Menu </a>
+                    <a id="connexion_a" class="nav-item nav-link " href="contact.html">Informations</a>
+                    <a id="connexion_a" class="nav-item nav-link" href="historique.html">Historique de commande</a>
+                    <a id="connexion_a" class="nav-item nav-link " href="panier.html">Mon panier</a>
+                    <a id="connexion_a" class="nav-item nav-link active" href="connexion.html">Connexion</a>
                   </div>
                 </div>
               </nav>
         </header>
+        <div id="connexion_id">
+          <div class="connexion_container" id="container">
+            <div class="connexion_form-container connexion_sign-up-container">
+              <form id="connexion_form" action="#">
+                <h1 id="connexion_id">Créer un compte</h1>
+                <div class="connexion_social-container">
+                  <a id="connexion_a" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                  <a id="connexion_a" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                  <a id="connexion_a" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span id="connexion_span">ou utilisez votre courriel</span>
+                <input id="connexion_input" type="text" placeholder="Name" />
+                <input id="connexion_input" type="email" placeholder="Email" />
+                <input id="connexion_input" type="password" placeholder="Password" />
+                <button id="connexion_btn">Ouvrir une session</button>
+              </form>
+            </div>
+            <div class="connexion_form-container connexion_sign-in-container">
+              <form id="connexion_form" action="#">
+                <h1 id="connexion_id">Ouvrir une session</h1>
+                <div class="connexion_social-container">
+                  <a id="connexion_a" href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                  <a id="connexion_a" href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                  <a id="connexion_a" href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>ou utilisez votre compte</span>
+                <input id="connexion_input" type="email" placeholder="Email" />
+                <input id="connexion_input" type="password" placeholder="Password" />
+                <a id="connexion_a" href="#">Mot de passe oublié?</a>
+                <button id="connexion_btn">Se connecter</button>
+              </form>
+            </div>
+            <div class="connexion_overlay-container">
+              <div class="connexion_overlay">
+                <div class="connexion_overlay-panel connexion_overlay-left">
+                  <h1 id="connexion_id">De retour!</h1>
+                  <p id="connexion_p">Pour rester en contact avec nous, veuillez vous connecter avec vos informations personnelles</p>
+                  <button id="connexion_btn" class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="connexion_overlay-panel connexion_overlay-right">
+                  <h1 id="connexion_id">Bonjour fan de Pizza</h1>
+                  <p id="connexion_p">Entrez vos informations personnelles et commencez votre voyage avec nous</p>
+                  <button id="connexion_btn" class="ghost" id="signUp">Sign Up</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
     </body>
 
 </html>
