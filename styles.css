@@ -255,11 +255,21 @@ a {
     max-height: 150px;
   }
 
-  .hide{
+  .prix-item{
     position: absolute;
     right: 40px;
     bottom: 30px;
   }
+
+  .btnShow:hover .hide{
+    display: block;
+  }
+
+  .hide{
+    display: none;
+  }
+
+
 
   #paiementh1{
     text-align: center;
