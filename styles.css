@@ -271,3 +271,8 @@ a {
     text-align: right;
     
   }
+
+  .texteeinfo{
+    text-align: center;
+    font-size: larger;
+  }
