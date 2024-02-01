@@ -26,6 +26,15 @@ li a:hover{
 nav{
   background-color: tomato;
 }
+.bottomnav{
+  bottom:0;
+  background-color: tomato;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  list-style-type: none;
+  font-size: 20px
+}
   #logoImg{
         -webkit-filter: drop-shadow(2px 2px 2px #222); 
         filter: drop-shadow(2px 2px 2px #222);
