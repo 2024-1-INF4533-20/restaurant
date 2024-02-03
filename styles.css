@@ -325,3 +325,11 @@ nav{
     width: 100%;
     bottom: 0px;
   }
+
+  #btnPanier{
+    background-color: tomato;
+    color: white;
+    width: auto;
+    bottom: 20px;
+    margin-right: 20px;
+  }
