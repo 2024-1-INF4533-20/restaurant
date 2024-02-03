@@ -319,3 +319,9 @@ nav{
     text-align: center;
     font-size: larger;
   }
+
+  footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+  }
