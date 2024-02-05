@@ -19,22 +19,21 @@
       </head>
 
     <body>
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark " >
-            <img src="Images/logo.png" width="200" alt="logo" id="logoImg">
-                <a class="navbar-brand" href="#">Pizza Info</a>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="menu.html">Menu </a>
-                    <a class="nav-item nav-link " href="contact.html">Informations</a>
-                    <a class="nav-item nav-link" href="historique.html">Historique de commande</a>
-                    <a class="nav-item nav-link active" href="panier.html">Mon panier</a>
-                    <a class="nav-item nav-link " href="paiement.html">Paiement</a>
-                    <a class="nav-item nav-link " href="connexion.html">Connexion</a>
-                  </div>
-                </div>
-              </nav>
-        </header>
+      <header> <!--Barre de naviguation-->
+        <ul class="topnav">
+          <li><img src="Images/logo.png" width="200" alt="logo" id="logoImg"></li>
+          <br>
+          <li><a href="menu.html">Pizza Info</a></li>
+          <div class="topnavright">
+            <li><a href="menu.html">Menu </a></li>
+            <li><a href="contact.html">Informations</a></li>
+            <li><a href="historique.html">Historique de commande</a></li>
+            <li><a href="panier.html">Mon panier</a></li>
+            <li><a  href="paiement.html">Paiement</a></li>
+            <li><a href="connexion.html">Connexion</a></li>
+          </div>
+        </ul>
+      </header>
 
         <section class="row justify-content-center" style="margin-left: 20%; margin-right: 20%; margin-top: 30px;">
             <h2>Voici le contenu de votre commande:</h2>
@@ -73,11 +72,23 @@
            
           </tbody>
         </table>
+
+        <!--boutton paiement-->
+        <a href="paiement.html" class="btn" id="btnPanier">Payer ma commande</a>
+
         </section>
 
         
 
-        
+        <!-- footer -->
+        <footer>
+          <ul class="bottomnav">
+            <li><a href="">Commentaires</a></li>
+            <li><a href="contact.html">À propos de nous</a></li>
+            <li><a><img src="Images/logo-facebook.png" width="80"></a></li>
+            <li><a href="#top">Haut de la page</a></li>
+          </ul>
+        </footer>
          
         
     </body>
