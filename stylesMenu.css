@@ -23,6 +23,7 @@
     bottom: 30px;
   }
 
+  /* permet d'afficher les objets avec la classes hide quand on hover sur un bouton dans le même container */
   .btnShow:hover .hide{
     display: block;
   }

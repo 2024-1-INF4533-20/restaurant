@@ -274,6 +274,7 @@ nav{
     font-size: larger;
   }
 
+  /* permet de ne pas avoir une partie de container caché par le footer position:fixed; */
   .before-footer{
     margin-bottom: 50px;
   }
