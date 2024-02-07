@@ -1,0 +1,6 @@
+.table {
+    border: 5px outset red;
+    background-color: rgb(255, 255, 255);    
+    text-align: center;
+    border-radius: 5%;
+  }
