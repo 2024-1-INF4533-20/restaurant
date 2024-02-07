@@ -8,24 +8,30 @@
   list-style-type: none;
   font-size: 25px
 }
+
 li {
   float:left;
 }
+
 li a {
   color: white;
   padding: 14px 16px;
   text-decoration: none;
   
 }
+
 li:last-child{
   float:right;
 }
+
 li a:hover{
   color:#333;
 }
+
 nav{
   background-color: tomato;
 }
+
 .bottomnav{
   bottom:0;
   background-color: tomato;
@@ -35,6 +41,7 @@ nav{
   list-style-type: none;
   font-size: 20px
 }
+
   #logoImg{
         -webkit-filter: drop-shadow(2px 2px 2px #222); 
         filter: drop-shadow(2px 2px 2px #222);
@@ -261,52 +268,16 @@ nav{
     width: 40px;
   }
 
-  .card{
-    margin: 10px;
-    height: 400px;
-    width: 300px;
-  }
-
-  .card .btn{
-    background-color: tomato;
-    color: white;
-    width: 100px;
-    bottom: 20px;
-    margin-right: 20px;
-    position: absolute;
-  }
-
-  .card img {
-    max-height: 150px;
-  }
-
-  .prix-item{
-    position: absolute;
-    right: 40px;
-    bottom: 30px;
-  }
-
-  .btnShow:hover .hide{
-    display: block;
-  }
-
-  .hide{
-    display: none;
-  }
 
   .texteeinfo{
     text-align: center;
     font-size: larger;
   }
 
-  .table {
-    border: 5px outset red;
-    background-color: rgb(255, 255, 255);    
-    text-align: center;
-    border-radius: 5%;
+  .before-footer{
+    margin-bottom: 50px;
   }
-
-
+ 
   footer{
     position: fixed;
     width: 100%;

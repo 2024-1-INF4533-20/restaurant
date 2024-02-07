@@ -1,0 +1,32 @@
+.card{
+    margin: 10px;
+    height: 400px;
+    width: 300px;
+  }
+
+  .card .btn{
+    background-color: tomato;
+    color: white;
+    width: 100px;
+    bottom: 20px;
+    margin-right: 20px;
+    position: absolute;
+  }
+
+  .card img {
+    max-height: 150px;
+  }
+
+  .prix-item{
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+  }
+
+  .btnShow:hover .hide{
+    display: block;
+  }
+
+  .hide{
+    display: none;
+  }
