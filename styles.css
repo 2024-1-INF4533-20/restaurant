@@ -294,27 +294,6 @@ nav{
     display: none;
   }
 
-
-
-  #paiementh1{
-    text-align: center;
-  }
-
-  #paiementh2{
-    text-align: center;
-  }
-  
-  #paiementform{
-    text-align: center;
-  }
-
-  .paiementlab{
-    display:inline-block;
-    width: 150px;
-    text-align: right;
-    
-  }
-
   .texteeinfo{
     text-align: center;
     font-size: larger;
@@ -379,5 +358,6 @@ nav{
     bottom: 0px;
   }
 
->>>>>>> b3b7dc172ed9d3a133b14ca3e6c04f4a035ffbbb
+=========
+>>>>>>>>> Temporary merge branch 2
   
