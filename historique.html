@@ -1,111 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pizza Info</title>
-        <link rel="icon" type="image/x-icon" href="/Images/logo.ico">
-        <link rel="stylesheet" href="styles.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <link rel="stylesheet" href="styleshistoriques.css">
-        
-    </head>
 
-    <body>
-      <header> <!--Barre de naviguation-->
-        <ul class="topnav">
-          <li><img src="Images/logo.png" width="200" alt="logo" id="logoImg"></li>
-          <li class="libr"><a href="menu.html">Pizza Info</a></li>
-          <li class="libr"><a href="menu.html">Menu </a></li>
-          <li class="libr"><a href="contact.html">Informations</a></li>
-          <li class="libr"><a href="historique.html">Historique de commande</a></li>
-          <li class="libr"><a href="panier.html">Mon panier</a></li>
-          <li class="libr"><a href="connexion.html">Connexion</a></li>
-        </ul>
-      </header>
-    
-      <section class="row justify-content-center"><!--Section de la liste de l'historique des commandes-->
-        <div class="tab">
-          <button class="tablinks" onclick="commandee(event, 'Commande1')" id="defaultOpen">Commande 1</button>
-          <button class="tablinks" onclick="commandee(event, 'Commande2')">Commande 2</button>
-          <button class="tablinks" onclick="commandee(event, 'Commande3')">Commande 3</button>
-        </div>
-      
-        <div id="Commande1" class="tabcontent"> <!--div qui contient les informations de la commande-->
-          <h3>Commande 1</h3>
-          <p>Commande au nom de Francis Lavigne
-            <br>
-            2X Pepperoni Fromage<br>
-            1X La Toute Garnie<br>
-            1X Linguini Alfredo<br>
-            Prix total de la commande (taxes incluses) : 97,70$
-            <br>20:21 4 Février 2024
-            <br> Adresse : 789 Rue du King
-          </p>
-        </div>
-        
-        <div id="Commande2" class="tabcontent">
-          <h3>Commande 2</h3>
-          <p>Commande au nom de Francis Lavigne
-            <br>
-            3X Carnivore<br>
-            1X Méditérrannée<br>
-            4X Boisson fontaine <br>
-            3X Café <br>
-            1X Thé <br>
-            Prix total de la commande (taxes incluses) : 137,86$
-            <br>16:00 5 Février 2024
-            <br> Adresse : 789 Rue du King
-            
-          </p> 
-        </div>
-        
-        <div id="Commande3" class="tabcontent">
-          <h3>Commande 3</h3>
-          <p>Commande au nom de Francis Lavigne
-            <br>
-            1X Carnivore<br>
-            1X Boisson fontaine <br>
-            1X Café <br>
-            Prix total de la commande (taxes incluses) : 35,04$
-            <br>15:00 6 Février 2024
-            <br> Adresse : 789 Rue du King
-            
-          </p>
-        </div>
-        
-        <script> /*Fonction qui permet d'afficher toutes les commandes et d'afficher la description d'une seule commande à la fois */
-        function commandee(evt, commandenom) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(commandenom).style.display = "block";
-          evt.currentTarget.className += " active";
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Info</title>
+  <link rel="icon" type="image/x-icon" href="/Images/logo.ico">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styleshistoriques.css">
+
+</head>
+
+<body>
+  <header> <!--Barre de naviguation-->
+    <ul class="topnav">
+      <li><img src="Images/logo.png" width="200" alt="logo" id="logoImg"></li>
+      <li class="libr"><a href="menu.html">Pizza Info</a></li>
+      <li class="libr"><a href="menu.html">Menu </a></li>
+      <li class="libr"><a href="contact.html">Informations</a></li>
+      <li class="libr"><a href="historique.html">Historique de commande</a></li>
+      <li class="libr"><a href="panier.html">Mon panier</a></li>
+      <li class="libr"><a href="connexion.html">Connexion</a></li>
+    </ul>
+  </header>
+
+  <section class="row justify-content-center"><!--Section de la liste de l'historique des commandes-->
+    <div class="tab">
+      <button class="tablinks" onclick="commandee(event, 'Commande1')" id="defaultOpen">Commande 1</button>
+      <button class="tablinks" onclick="commandee(event, 'Commande2')">Commande 2</button>
+      <button class="tablinks" onclick="commandee(event, 'Commande3')">Commande 3</button>
+    </div>
+
+    <div id="Commande1" class="tabcontent"> <!--div qui contient les informations de la commande-->
+      <h3>Commande 1</h3>
+      <p>Commande au nom de Francis Lavigne
+        <br>
+        2X Pepperoni Fromage<br>
+        1X La Toute Garnie<br>
+        1X Linguini Alfredo<br>
+        Prix total de la commande (taxes incluses) : 97,70$
+        <br>20:21 4 Février 2024
+        <br> Adresse : 789 Rue du King
+      </p>
+    </div>
+
+    <div id="Commande2" class="tabcontent">
+      <h3>Commande 2</h3>
+      <p>Commande au nom de Francis Lavigne
+        <br>
+        3X Carnivore<br>
+        1X Méditérrannée<br>
+        4X Boisson fontaine <br>
+        3X Café <br>
+        1X Thé <br>
+        Prix total de la commande (taxes incluses) : 137,86$
+        <br>16:00 5 Février 2024
+        <br> Adresse : 789 Rue du King
+
+      </p>
+    </div>
+
+    <div id="Commande3" class="tabcontent">
+      <h3>Commande 3</h3>
+      <p>Commande au nom de Francis Lavigne
+        <br>
+        1X Carnivore<br>
+        1X Boisson fontaine <br>
+        1X Café <br>
+        Prix total de la commande (taxes incluses) : 35,04$
+        <br>15:00 6 Février 2024
+        <br> Adresse : 789 Rue du King
+
+      </p>
+    </div>
+
+    <script> /*Fonction qui permet d'afficher toutes les commandes et d'afficher la description d'une seule commande à la fois */
+      function commandee(evt, commandenom) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
         }
-        
-        // Get the element with id="defaultOpen" and click on it
-        document.getElementById("defaultOpen").click();
-        </script>
-    
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(commandenom).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
+
   </section>
-    
-    <!-- footer -->
-    <footer>
-      <ul class="bottomnav">
-        <li><a href="">Commentaires</a></li>
-        <li><a href="contact.html">À propos de nous</a></li>
-        <li><a><img src="Images/logo-facebook.png" width="80" alt="facebook"></a></li>
-        <li><a href="#top">Haut de la page</a></li>
-      </ul>
-    </footer>
-  
-    
-  </body>
+
+  <!-- footer -->
+  <footer>
+    <ul class="bottomnav">
+      <li><a href="">Commentaires</a></li>
+      <li><a href="contact.html">À propos de nous</a></li>
+      <li><a><img src="Images/logo-facebook.png" width="80" alt="facebook"></a></li>
+      <li><a href="#top">Haut de la page</a></li>
+    </ul>
+  </footer>
+
+
+</body>
 
 </html>
