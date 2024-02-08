@@ -1,36 +1,36 @@
-.card{
-    margin: 10px;
-    height: 400px;
-    width: 300px;
-  }
+.card {
+  margin: 10px;
+  height: 400px;
+  width: 300px;
+}
 
-  .card .btn{
-    background-color: tomato;
-    color: white;
-    width: 100px;
-    bottom: 20px;
-    margin-right: 20px;
-    position: absolute;
-  }
+.card .btn {
+  background-color: tomato;
+  color: white;
+  width: 100px;
+  bottom: 20px;
+  margin-right: 20px;
+  position: absolute;
+}
 
-  .card img {
-    max-height: 150px;
-  }
+.card img {
+  max-height: 150px;
+}
 
-  .prix-item{
-    position: absolute;
-    right: 40px;
-    bottom: 30px;
-  }
+.prix-item {
+  position: absolute;
+  right: 40px;
+  bottom: 30px;
+}
 
-  /* permet d'afficher les objets avec la classes hide quand on hover sur un bouton dans le même container */
-  .btnShow:hover .hide{
-    display: block;
-  }
+/* permet d'afficher les objets avec la classes hide quand on hover sur un bouton dans le même container */
+.btnShow:hover .hide {
+  display: block;
+}
 
-  .hide{
-    display: none;
-  }
+.hide {
+  display: none;
+}
 
   h3{
     padding-top: 20px;
