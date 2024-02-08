@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+/*css barre de navigation en haut*/
 .topnav {
   background-color: tomato;
   margin: 0;
@@ -28,6 +29,7 @@ li:last-child {
   float: right;
 }
 
+
 li a:hover {
   color: #333;
 }
@@ -36,6 +38,7 @@ nav {
   background-color: tomato;
 }
 
+/*css barre de navigation en bas*/
 .bottomnav {
   bottom: 0;
   background-color: tomato;
@@ -46,18 +49,20 @@ nav {
   font-size: 20px
 }
 
+/*css logo*/
 #logoImg {
   -webkit-filter: drop-shadow(2px 2px 2px #222);
   filter: drop-shadow(2px 2px 2px #222);
 }
 
+/*css taille de la boîte*/
 * {
   box-sizing: border-box;
 }
 
 
 
-
+/*Disposition du texte*/
 .texteeinfo {
   text-align: left;
   font-size: larger;

@@ -1,9 +1,11 @@
+/*css caractéristiques de la carte*/
 .card {
   margin: 10px;
   height: 400px;
   width: 300px;
 }
 
+/*css caractéristiques du bouton de la carte*/
 .card .btn {
   background-color: tomato;
   color: white;
@@ -13,10 +15,12 @@
   position: absolute;
 }
 
+/*css image de la carte*/
 .card img {
   max-height: 150px;
 }
 
+/*css le prix du plat*/
 .prix-item {
   position: absolute;
   right: 40px;

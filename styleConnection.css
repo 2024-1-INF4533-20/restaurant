@@ -5,6 +5,7 @@
 
 }
 
+/*css de l'arrière plan*/
 .page {
 
     padding-top: 50px;
@@ -40,6 +41,7 @@
     font-size: 12px;
 }
 
+/*css pour a*/
 .container a {
     color: #333;
     font-size: 13px;
@@ -47,6 +49,7 @@
     margin: 15px 0 10px;
 }
 
+/*css du bouton*/
 .container button {
     background-color: tomato;
     color: #fff;
@@ -65,6 +68,7 @@
     background-color: transparent;
     border-color: #fff;
 }
+
 
 .container form {
     background-color: #fff;
@@ -118,6 +122,7 @@
     animation: move 0.6s;
 }
 
+
 @keyframes move {
 
     0%,
@@ -163,10 +168,12 @@
     transition: all 0.6s ease-in-out;
 }
 
+/*lorsque le toggle est activé*/
 .container.active .toggle {
     transform: translateX(50%);
 }
 
+/**/
 .toggle-panel {
     position: absolute;
     width: 50%;
