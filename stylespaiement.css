@@ -1,18 +1,18 @@
-#paiementh1{
-    text-align: center;
-  }
+#paiementh1 {
+  text-align: center;
+}
 
-  #paiementh2{
-    text-align: center;
-  }
-  
-  #paiementform{
-    text-align: center;
-  }
+#paiementh2 {
+  text-align: center;
+}
 
-  .paiementlab{
-    display:inline-block;
-    width: 150px;
-    text-align: right;
-    
-  }
+#paiementform {
+  text-align: center;
+}
+
+.paiementlab {
+  display: inline-block;
+  width: 150px;
+  text-align: right;
+
+}
