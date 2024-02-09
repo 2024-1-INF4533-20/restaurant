@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+/*Couleur du background du body de chaque page*/
+.background {
+  background-color: #ffe5b4;
+}
+/*Ajustement body pour panier, historique et contact*/
+.backcomplet {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
 /*css barre de navigation en haut*/
 .topnav {
   background-color: tomato;
@@ -71,6 +82,7 @@ nav {
 /* permet de ne pas avoir une partie de container caché par le footer position:fixed; */
 .before-footer {
   margin-bottom: 50px;
+  background-color: #ffe5b4;
 }
 
 footer {

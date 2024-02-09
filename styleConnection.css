@@ -18,6 +18,7 @@
 
 }
 
+/*css de la boite de connexion*/
 .container {
     
     background-color: #fff;
@@ -32,6 +33,7 @@
 
 }
 
+/*css du container panel*/
 .container p {
     font-size: 14px;
     line-height: 20px;
@@ -66,6 +68,7 @@
     cursor: pointer;
 }
 
+
 .container button.hidden {
     background-color: transparent;
     border-color: #fff;
@@ -82,6 +85,7 @@
     height: 100%;
 }
 
+/*css de du input*/
 .container input {
     background-color: #eee;
     border: none;
@@ -100,6 +104,7 @@
     transition: all 0.6s ease-in-out;
 }
 
+/*css du sign in*/
 .sign-in {
     left: 0;
     width: 50%;
@@ -109,6 +114,7 @@
 .container.active .sign-in {
     transform: translateX(100%);
 }
+
 
 .sign-up {
     left: 0;
@@ -140,6 +146,7 @@
     }
 }
 
+/*css pour le container de transition*/
 .toggle-container {
     position: absolute;
     top: 0;
@@ -157,6 +164,7 @@
     border-radius: 0 150px 100px 0;
 }
 
+/*css pour la transition*/
 .toggle {
     background-color: tomato;
     height: 100%;
@@ -192,6 +200,7 @@
 }
 
 
+/*css du toggle*/
 .toggle-left {
     transform: translateX(-200%);
 }
@@ -200,11 +209,13 @@
     transform: translateX(0);
 }
 
+/*css du toggle*/
 .toggle-right {
     right: 0;
     transform: translateX(0);
 }
 
+/*css du toggle*/
 .container.active .toggle-right {
     transform: translateX(200%);
 }
