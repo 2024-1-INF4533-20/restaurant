@@ -12,7 +12,7 @@
 
 /*css label page paiement*/
 .paiementlab {
-  display: inline-block;
+  display:inline-block;
   width: 150px;
   text-align: right;
 
@@ -24,6 +24,5 @@
   background-color: white;
   padding-top: 50px;
   padding-bottom: 50px;
-  padding-left: 0px;
-  padding-right: 0%;
+  
 }
