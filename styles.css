@@ -21,10 +21,11 @@
   font-size: 25px
 }
 
+/*Place les elements centre avec la barre de nav*/
 .libr {
   margin-top: 30px;
 }
-
+/*place les elements de la liste a gauche*/
 li {
   float: left;
 }
@@ -36,15 +37,17 @@ li a {
 
 }
 
+/*Mets le lien connexion a la droite de la page*/
 li:last-child {
   float: right;
 }
 
-
+/*Change la couleur lorsqu'on place la souris sur l'element*/
 li a:hover {
   color: #333;
 }
 
+/*Couleur barre de naviguation*/
 nav {
   background-color: tomato;
 }
