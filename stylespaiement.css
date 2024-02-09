@@ -18,11 +18,12 @@
 
 }
 
-.container {
+.contain {
   border-radius: 25px;
   border: 2px solid black;
-  background-color: white;
+  background-color: lightyellow;
   padding-top: 50px;
   padding-bottom: 50px;
-  
+  margin:auto;
+  width: 500px;
 }
