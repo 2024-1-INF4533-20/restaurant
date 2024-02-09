@@ -9,14 +9,16 @@
 /*css de l'arrière plan*/
 .page {
 
-    padding-top: 50px;
+    padding-top: 75px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height:auto;
+    height:100vh;
     background-color: #ffe5b4;
 
 }
+
+
 
 /*css de la boite de connexion*/
 .container {
