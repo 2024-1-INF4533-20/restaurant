@@ -4,6 +4,11 @@
 .background {
   background-color: #ffe5b4;
 }
+.backcomplet {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
 
 .topnav {
   background-color: tomato;
@@ -75,6 +80,7 @@ nav {
 /* permet de ne pas avoir une partie de container caché par le footer position:fixed; */
 .before-footer {
   margin-bottom: 50px;
+  background-color: #ffe5b4;
 }
 
 footer {
