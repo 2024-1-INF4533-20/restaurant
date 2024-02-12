@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+/*Couleur du background du body de chaque page*/
+.background {
+  background-color: #ffe5b4;
+}
+/*Ajustement body pour panier, historique et contact*/
+.backcomplet {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+/*css barre de navigation en haut*/
 .topnav {
   background-color: tomato;
   margin: 0;
@@ -9,10 +21,11 @@
   font-size: 25px
 }
 
+/*Place les elements centre avec la barre de nav*/
 .libr {
   margin-top: 30px;
 }
-
+/*place les elements de la liste a gauche*/
 li {
   float: left;
 }
@@ -24,18 +37,22 @@ li a {
 
 }
 
+/*Mets le lien connexion a la droite de la page*/
 li:last-child {
   float: right;
 }
 
+/*Change la couleur lorsqu'on place la souris sur l'element*/
 li a:hover {
   color: #333;
 }
 
+/*Couleur barre de naviguation*/
 nav {
   background-color: tomato;
 }
 
+/*css barre de navigation en bas*/
 .bottomnav {
   bottom: 0;
   background-color: tomato;
@@ -46,18 +63,20 @@ nav {
   font-size: 20px
 }
 
+/*css logo*/
 #logoImg {
   -webkit-filter: drop-shadow(2px 2px 2px #222);
   filter: drop-shadow(2px 2px 2px #222);
 }
 
+/*css taille de la boîte*/
 * {
   box-sizing: border-box;
 }
 
 
 
-
+/*Disposition du texte*/
 .texteeinfo {
   text-align: left;
   font-size: larger;
@@ -66,6 +85,7 @@ nav {
 /* permet de ne pas avoir une partie de container caché par le footer position:fixed; */
 .before-footer {
   margin-bottom: 50px;
+  background-color: #ffe5b4;
 }
 
 footer {

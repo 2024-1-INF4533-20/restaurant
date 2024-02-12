@@ -1,0 +1,35 @@
+.about-us{
+    padding-top: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.texteeinfo{
+    text-align: center;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.text-contact{
+  padding-top: 20px;
+  
+  border: 2px solid black;
+  background-color: lightyellow;
+  margin-bottom: 50px;
+}
+
+.star{
+    text-align: center;
+}
+
+.review{
+    text-align: center;
+}
+
+.checked{
+    color: orange;
+}
+
+.imgDiv{
+    text-align: center;
+}

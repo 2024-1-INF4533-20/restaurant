@@ -24,62 +24,65 @@
       <li class="libr"><a href="connexion.html">Connexion</a></li>
     </ul>
   </header>
+  <div class="background">
+    <section class="before-footer">
+      <h1 id="paiementh1">Paiement de votre commande</h1>
+      <h2 id="paiementh2">Votre total est de: 53,65$</h2><!--Montant fictif juste pour visualiser-->
+      <form id="paiementform">
+        <div class="contain">
+          <div> <!--Information de paiement (carte)-->
+            <label class="paiementlab" for="fname">*Prénom:</label>
+            <input type="text" id="fname" required><br><br>
+            <label class="paiementlab" for="lname">*Nom:</label>
+            <input type="text" id="lname" required><br><br>
+            <label class="paiementlab" for="numb">*Numéro de carte:</label>
+            <input type="text" id="numb" maxlength="16" required placeholder="xxxx-xxxx-xxxx-xxxx"><br><br>
+            <label class="paiementlab" for="exp">*Date d'expiration:</label>
+            <input type="month" id="exp" required><br><br>
+            <label class="paiementlab" for="codesec">*Code de sécurité:</label>
+            <input type="text" id="codesec" required><br><br>
+            <label class="paiementlab" for="check">Enregistrer la carte?</label><!--Checkbox pour enregistrer carte pour le prochain paiement-->
+            <input type="checkbox" id="check"><br><br>
+            </div>
 
-  <section class="before-footer">
-    <h1 id="paiementh1">Paiement de votre commande</h1>
-    <h2 id="paiementh2">Votre total est de: 53,65$</h2><!--Montant fictif juste pour visualiser-->
-    <form id="paiementform">
-      <div> <!--Information de paiement (carte)-->
-        <label class="paiementlab" for="fname">*Prénom:</label>
-        <input type="text" id="fname" required><br><br>
-        <label class="paiementlab" for="lname">*Nom:</label>
-        <input type="text" id="lname" required><br><br>
-        <label class="paiementlab" for="numb">*Numéro de carte:</label>
-        <input type="text" id="numb" maxlength="16" required placeholder="xxxx-xxxx-xxxx-xxxx"><br><br>
-        <label class="paiementlab" for="exp">*Date d'expiration:</label>
-        <input type="month" id="exp" required><br><br>
-        <label class="paiementlab" for="codesec">*Code de sécurité:</label>
-        <input type="text" id="codesec" required><br><br>
-        <label class="paiementlab" for="check">Enregistrer la
-          carte?</label><!--Checkbox pour enregistrer carte pour le prochain paiement-->
-        <input type="checkbox" id="check"><br><br>
-      </div>
-      <div> <!--Information de livraison-->
-        <label class="paiementlab" for="numporte">*Adresse postale:</label>
-        <input type="text" id="numporte" required><br><br>
-        <label class="paiementlab" for="ville">*Ville:</label>
-        <input type="text" id="ville" required><br><br>
-        <label class="paiementlab" for="codepost">*Code postale:</label>
-        <input type="text" id="codepost" required><br><br>
-        <label class="paiementlab" for="province">*Province:</label>
-        <select name="province" id="province" required>
-          <option value="" label="Choisir une province"></option>
-          <option value="Alberta">Alberta</option>
-          <option value="Colombie Britannique">Colombie Britannique</option>
-          <option value="Île-du-Prince-Édouard">Île-du-Prince-Édouard</option>
-          <option value="Manitoba">Manitoba</option>
-          <option value="Nouveau-Brunswick">Nouveau-Brunswick</option>
-          <option value="Nouvelle-Ecosse">Nouvelle-Écosse</option>
-          <option value="Ontario">Ontario</option>
-          <option value="Quebec" selected="selected">Québec</option>
-          <option value="Saskatchewan">Saskatchewan</option>
-          <option value="Terre-Neuve-et-Labrador">Terre-Neuve-et-Labrador</option>
-        </select><br><br>
-        <label class="paiementlab" for="pays">*Pays:</label>
-        <select name="pays" id="pays" required>
-          <option value="" label="Choisir un pays"></option>
-          <option value="Canada" selected="selected">Canada</option>
-        </select><br><br>
-        <label class="paiementlab" for="numtel">*Numéro <br>de téléphone:</label>
-        <input type="text" id="numtel" required><br><br>
-        <label class="paiementlab" for="check2">Enregistrer
-          l'adresse?</label><!--Checkbox pour enregistrer adresse pour une prochaine livraison-->
-        <input type="checkbox" id="check2"><br><br>
-      </div>
-      <input type="submit" value="Payer">
-    </form>
-    <br>
-  </section>
+            <div> <!--Information de livraison-->
+            <label class="paiementlab" for="numporte">*Adresse postale:</label>
+            <input type="text" id="numporte" required><br><br>
+            <label class="paiementlab" for="ville">*Ville:</label>
+            <input type="text" id="ville" required><br><br>
+            <label class="paiementlab" for="codepost">*Code postale:</label>
+            <input type="text" id="codepost" required><br><br>
+            <label class="paiementlab" for="province">*Province:</label>
+            <select name="province" id="province" required>
+              <option value="" label="Choisir une province"></option>
+              <option value="Alberta">Alberta</option>
+              <option value="Colombie Britannique">Colombie Britannique</option>
+              <option value="Île-du-Prince-Édouard">Île-du-Prince-Édouard</option>
+              <option value="Manitoba">Manitoba</option>
+              <option value="Nouveau-Brunswick">Nouveau-Brunswick</option>
+              <option value="Nouvelle-Ecosse">Nouvelle-Écosse</option>
+              <option value="Ontario">Ontario</option>
+              <option value="Quebec" selected="selected">Québec</option>
+              <option value="Saskatchewan">Saskatchewan</option>
+              <option value="Terre-Neuve-et-Labrador">Terre-Neuve-et-Labrador</option>
+            </select><br><br>
+            <label class="paiementlab" for="pays">*Pays:</label>
+            <select name="pays" id="pays" required>
+              <option value="" label="Choisir un pays"></option>
+              <option value="Canada" selected="selected">Canada</option>
+            </select><br><br>
+            <label class="paiementlab" for="numtel">*Numéro <br>de téléphone:</label>
+            <input type="text" id="numtel" required><br><br>
+            <label class="paiementlab" for="check2">Enregistrer l'adresse?</label><!--Checkbox pour enregistrer adresse pour une prochaine livraison-->
+            <input type="checkbox" id="check2"><br><br>
+          </div>
+          <input type="submit" value="Payer">
+        </div>
+      </form>
+      <br>
+    </section>
+  </div>
+
   <!-- bas de page -->
   <footer>
     <ul class="bottomnav">
