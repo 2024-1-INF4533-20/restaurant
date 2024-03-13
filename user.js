@@ -1,7 +1,7 @@
-function sauvegarde(JSONString, nomdefichier){
+function sauvegarde(JSONString, nomdefichier){ //pour sauvegarder les modifications dans le fichier user.json
     fs.writeFileSync(nomdefichier, JSONString);
 }
-function ajouteruser(user){
+function ajouteruser(user){  //ajoute un user dans le fichier user.json en utilisant sauvegarde()
     fs.readFile("user.json", (error, data) => {
         if(error){
             console.error(error);
@@ -14,5 +14,5 @@ function ajouteruser(user){
     })
 }
 
-let user= {"nom": "ALex"};
+let user= {"nom": "ALex"}; //test pour ajouter un user dans user.json
 ajouteruser(user);
