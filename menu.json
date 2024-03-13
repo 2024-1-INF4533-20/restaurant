@@ -1,0 +1,112 @@
+[{
+    "id": "1",
+    "type": "Pizza",
+    "nom" : "La Toute Garnie",
+    "ingredients": "Champignon, poivrons, pepperoni, mozzarella et sauce aux tomates",
+    "prix": "24,49$"
+},
+{
+    "id": "2",
+    "type": "Pizza",
+    "nom" : "Pepperoni Fromage",
+    "ingredients": "Pepperoni, mozzarella et sauce aux tomates",
+    "prix": "22,49$" 
+},
+{
+    "id": "3",
+    "type": "Pizza",
+    "nom" : "Hawaïenne",
+    "ingredients": "Ananas, jambon, mozzarella et sauce aux tomates",
+    "prix": "22,49$" 
+},
+{
+    "id": "4",
+    "type": "Pizza",
+    "nom" : "Végétarienne",
+    "ingredients": "Champignon, poivrons, olives, oignons et sauce aux tomates",
+    "prix": "23,79$" 
+},
+{
+    "id": "5",
+    "type": "Pizza",
+    "nom" : "Poulet BBQ",
+    "ingredients": "Poulet blanc, oignons vrts, tomates, mozzarella et sauce BBQ",
+    "prix": "26,99$" 
+},
+{
+    "id": "6",
+    "type": "Pizza",
+    "nom" : "Méditérrannée",
+    "ingredients": "Tomates, olives, oignons, feta, mozzarella et sauce aux tomates",
+    "prix": "24,99$" 
+},
+{
+    "id": "7",
+    "type": "Pizza",
+    "nom" : "Carnivore",
+    "ingredients": "Pepperoni, jambon, bacon, mozzarella et sauce aux tomates",
+    "prix": "26,99$" 
+},
+{
+    "id": "8",
+    "type": "Pates",
+    "nom" : "Spaghetti sauce tomates",
+    "ingredients": "Spaghetti, mozzarella et sauce aux tomates",
+    "prix": "15,49$" 
+},
+{
+    "id": "9",
+    "type": "Pates",
+    "nom" : "Spaghetti sauce à la viande",
+    "ingredients": "Spaghetti, mozzarella et sauce à la viande",
+    "prix": "15,49$" 
+},
+{
+    "id": "10",
+    "type": "Pates",
+    "nom" : "Linguini Alfredo",
+    "ingredients": "Linguini, sauce Alfredo",
+    "prix": "15,49$" 
+},
+{
+    "id": "11",
+    "type": "Pates",
+    "nom" : "Linguini Carbonara",
+    "ingredients": "Linguini, Sauce Carbonara",
+    "prix": "15,49$" 
+},
+{
+    "id": "12",
+    "type": "Pates",
+    "nom" : "Lasagne",
+    "ingredients": "lasagne, pepperoni, mozzarella et sauce à la viande",
+    "prix": "15,49$" 
+},
+{
+    "id": "13",
+    "type": "Breuvages",
+    "nom" : "Café",
+    "ingredients": "sucre, cassonade, lait et crème offerts",
+    "prix": "1,99$" 
+},
+{
+    "id": "14",
+    "type": "Breuvages",
+    "nom" : "Thé",
+    "ingredients": "choix de thé noir, vert ou orange pekoe",
+    "prix": "1,99$" 
+},
+{
+    "id": "13",
+    "type": "Breuvages",
+    "nom" : "Boisson fontaine",
+    "ingredients": "Coke, Coke diète, Coke zéro, Racinette, Sprite, Fruitopia aux fraises, Fruitopia à l'orange, Mtn Dew",
+    "prix": "1,49$" 
+},
+{
+    "id": "13",
+    "type": "Breuvages",
+    "nom" : "Jus",
+    "ingredients": "Jus de pomme ou jus d'orange",
+    "prix": "2,49$" 
+}]
