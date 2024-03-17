@@ -14,5 +14,5 @@ function ajouteruser(user){  //ajoute un user dans le fichier user.json en utili
     })
 }
 
-let user= {"nom": "ALex"}; //test pour ajouter un user dans user.json
+let user= {"nom": "Alex"}; //test pour ajouter un user dans user.json
 ajouteruser(user);

@@ -1,0 +1,39 @@
+[
+    {
+        "nom": "Francis Lavigne",
+        "commande": [
+            "Pepperoni Fromage",
+             "La Toute Garnie", 
+             "Linguini Alfredo"],
+        "prix" : "97,70$",
+        "date": "20:21 4 Février 2024",
+        "adresse": "789 Rue du King"
+    },
+    {
+        "nom": "Francis Lavigne",
+        "commande": [
+            "Carnivore",
+            "Carnivore",
+            "Carnivore",
+             "Méditérrannée", 
+             "Boisson fontaine",
+             "Café",
+             "Café",
+             "Café",
+             "Thé"],
+        "prix" : "137,86$",
+        "date": "16:00 5 Février 2024",
+        "adresse": "789 Rue du King"
+    },
+    {
+        "nom": "Francis Lavigne",
+        "commande": [
+            "Carnivore",
+             "Boisson fontaine",
+             "Café"],
+        "prix" : "35,04$",
+        "date": "15:00 6 Février 2024",
+        "adresse": "789 Rue du King"
+    }
+
+]
