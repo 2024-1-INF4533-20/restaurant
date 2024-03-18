@@ -21,10 +21,26 @@ fetch('datajson/user.json')
 
     if (user) {
         alert("Connexion réussie!");
+        sessionStorage.setItem("userCourriel", user.courriel);
+        window.location.href = "index.html";
     } else {
         alert("Courriel ou mot de passe invalide!");
     }
 }
+
+function displayUserEmail() {
+    const userEmail = sessionStorage.getItem("userEmail");
+    if (userEmail) {
+        const connexionTab = document.getElementById("connexionTab");
+        const emailLink = document.createElement("a");
+        emailLink.textContent = userEmail;
+        emailLink.href = "#";
+        connexionTab.innerHTML = "";
+        connexionTab.appendChild(emailLink);
+    }
+}
+
+window.onload = displayUserEmail;
 
 
 function ajouteruser(){  //ajoute un user dans le fichier user.json en utilisant sauvegarde()
