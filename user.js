@@ -29,7 +29,8 @@ fetch('datajson/user.json')
 }
 
 function displayUserEmail() {
-    const userEmail = sessionStorage.getItem("userEmail");
+    const userEmail = sessionStorage.getItem("userCourriel");
+    console.log("email reçu: "+userEmail);
     if (userEmail) {
         const connexionTab = document.getElementById("connexionTab");
         const emailLink = document.createElement("a");
