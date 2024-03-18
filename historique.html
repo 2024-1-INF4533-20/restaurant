@@ -1,15 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-<!--<h3>Commande 1</h3>
-<p>Commande au nom de Francis Lavigne
-  <br>
-  2X Pepperoni Fromage<br>
-  1X La Toute Garnie<br>
-  1X Linguini Alfredo<br>
-  Prix total de la commande (taxes incluses) : 97,70$
-  <br>20:21 4 Février 2024
-  <br> Adresse : 789 Rue du King
-</p>-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,22 +31,17 @@
         <tr>
           <td style="width: 30%; margin-left: 150px;">
             <div class="tab">
-              <!--<button class="tablinks" onclick="commandee(event, 'Commande 1')" id="defaultOpen">Commande 1</button>
-              <button class="tablinks" onclick="commandee(event, 'Commande 2')">Commande 2</button>
-              <button class="tablinks" onclick="commandee(event, 'Commande 3')">Commande 3</button>-->
+              <!--bouttons sur le côté-->
             </div>
           </td>
 
           <td>
             <section class="content">
-        
+              <!--infos des commandes-->
             </section>
           </td>
         </tr>
       </table>
-      
-
-      <!--<div id="Commande1" class="tabcontent"> div qui contient les informations de la commande-->
       
 
       <script>
@@ -81,6 +66,7 @@
                     </div>`);
                     
                   });
+                  //ceci rend les commandes invisibles jusqu'à ce qu'une commande soit sélectionnée
                   tabcontent = document.getElementsByClassName("tabcontent");
                   for (i = 0; i < tabcontent.length; i++) {
                     tabcontent[i].style.display = "none";
