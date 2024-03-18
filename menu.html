@@ -99,17 +99,17 @@
 
           <script>
             const mesPates = document.querySelector('table#tableMesPates');
-            var compteur = 1;
+            var compteurPa = 1;
             fetch('./datajson/menu.json')
               .then(res => res.json())
               .then(data =>{
                 let pates = data.filter(produit => produit.type == "Pates");
                 var row = mesPates.insertRow(0);
                 pates.forEach(p => {
-                  if(compteur>6)
+                  if(compteurPa>4)
                   {
                     
-                    compteur = 0;
+                    compteurPa = 0;
                     console.log("je suis à 4");
                     row = mesPates.insertRow(-1);
                     
@@ -138,126 +138,13 @@
                     </div>
                   </td>                      
                   `;
-                  compteur++;
+                  compteurPa++;
                   }
                   
                 );
               })
           </script>
-          <!--
-          <tr>
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/Pates/SpagTomates.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Spaghetti sauce tomates</h5>
-                  <p class="card-text">Spaghetti, mozzarella et sauce aux tomates</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn   ">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">15,49$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/Pates/SpagViande.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Spaghetti sauce à la viande</h5>
-                  <p class="card-text">Spaghetti, mozzarella et sauce à la viande</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn   ">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">15,49$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/Pates/linguiniAlfred.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Linguini Alfredo</h5>
-                  <p class="card-text">Linguini, sauce Alfredo</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn   ">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">15,49$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/Pates/linguiniCarb.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Linguini Carbonara</h5>
-                  <p class="card-text">Linguini, Sauce Carbonara</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">15,49$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/Pates/lasagne.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Lasagne</h5>
-                  <p class="card-text">lasagne, pepperoni, mozzarella et sauce à la viande</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">15,49$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-          </tr>-->
+          
         </table>
 
       </div>
@@ -272,17 +159,17 @@
 
           <script>
             const mesBreuvages = document.querySelector('table#tableMesBreuvages');
-            var compteur = 1;
+            var compteurBa = 1;
             fetch('./datajson/menu.json')
               .then(res => res.json())
               .then(data =>{
                 let breuvages = data.filter(produit => produit.type == "Breuvages");
                 var row = mesBreuvages.insertRow(0);
                 breuvages.forEach(b => {
-                  if(compteur>4)
+                  if(compteurBa>4)
                   {
                     
-                    compteur = 0;
+                    compteurBa = 0;
                     console.log("je suis à 4");
                     row = mesBreuvages.insertRow(-1);
                     
@@ -311,7 +198,7 @@
                     </div>
                   </td>                      
                   `;
-                  compteur++;
+                  compteurBa++;
                   }
                   
                 );
