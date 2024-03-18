@@ -268,99 +268,55 @@
     <section class="row justify-content-center before-footer">
       <div class="col-auto">
         <h3 id="tableBreuvages">Nos Breuvages</h3>
-        <table class="table">
+        <table class="table" id="tableMesBreuvages">
 
-          <tr>
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/breuvages/cafe.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Café</h5>
-                  <p class="card-text">sucre, cassonade, lait et crème offerts</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn   ">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">1,99$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/breuvages/the.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Thé</h5>
-                  <p class="card-text">choix de thé noir, vert ou orange pekoe</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn   ">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">1,99$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/breuvages/fontaine.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Boisson fontaine</h5>
-                  <p class="card-text">Coke, Coke diète, Coke zéro, Racinette, Sprite, Fruitopia aux fraises, Fruitopia
-                    à
-                    l'orange, Mtn Dew</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn   ">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">1,49$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                <img class="card-img-top" src="Images/breuvages/jus.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Jus</h5>
-                  <p class="card-text">Jus de pomme ou jus d'orange</p>
-                  <table>
-                    <tr>
-                      <td>
-                        <a href="#" class="btn">Ajouter au panier</a>
-                      </td>
-                      <td>
-                        <div class="hide">
-                          <p class="prix-item">2,49$</p>
-                        </div>
-                      </td>
-                    </tr>
-                  </table>
-                </div>
-              </div>
-            </td>
-          </tr>
+          <script>
+            const mesBreuvages = document.querySelector('table#tableMesBreuvages');
+            var compteur = 1;
+            fetch('./datajson/menu.json')
+              .then(res => res.json())
+              .then(data =>{
+                let breuvages = data.filter(produit => produit.type == "Breuvages");
+                var row = mesBreuvages.insertRow(0);
+                breuvages.forEach(b => {
+                  if(compteur>4)
+                  {
+                    
+                    compteur = 0;
+                    console.log("je suis à 4");
+                    row = mesBreuvages.insertRow(-1);
+                    
+                  } 
+                    var mycell = row.insertCell(-1);
+                    mycell.innerHTML =`
+                  <td>
+                    <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
+                      <img class="card-img-top" src="${b.image}" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">${b.nom}</h5>
+                        <p class="card-text">${b.ingredients}</p>
+                        <table>
+                          <tr>
+                            <td>
+                              <a href="#" class="btn   ">Ajouter au panier</a>
+                            </td>
+                            <td>
+                              <div class="hide">
+                                <p class="prix-item">${b.prix}</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </td>                      
+                  `;
+                  compteur++;
+                  }
+                  
+                );
+              })
+          </script>
         </table>
       </div>
 
