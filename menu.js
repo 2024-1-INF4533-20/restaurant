@@ -1,5 +1,5 @@
 const fs = require("fs");
-fs.readFile("menu.json", (error, data) => {
+fs.readFile("datajson/menu.json", (error, data) => {
     if(error){
         console.error(error);
         throw err;
