@@ -37,23 +37,29 @@
 
   <div class="background backcomplet">
     <section class="row justify-content-center"><!--Section de la liste de l'historique des commandes-->
-      <div class="tab">
-        <!--<button class="tablinks" onclick="commandee(event, 'Commande 1')" id="defaultOpen">Commande 1</button>
-        <button class="tablinks" onclick="commandee(event, 'Commande 2')">Commande 2</button>
-        <button class="tablinks" onclick="commandee(event, 'Commande 3')">Commande 3</button>-->
-      </div>
+      <table id="monHistorique">
+        <tr>
+          <td style="width: 30%; margin-left: 150px;">
+            <div class="tab">
+              <!--<button class="tablinks" onclick="commandee(event, 'Commande 1')" id="defaultOpen">Commande 1</button>
+              <button class="tablinks" onclick="commandee(event, 'Commande 2')">Commande 2</button>
+              <button class="tablinks" onclick="commandee(event, 'Commande 3')">Commande 3</button>-->
+            </div>
+          </td>
+
+          <td>
+            <section class="content">
+        
+            </section>
+          </td>
+        </tr>
+      </table>
+      
 
       <!--<div id="Commande1" class="tabcontent"> div qui contient les informations de la commande-->
-      <section class="content">
-        <script>
-          const mesBoutons = document.querySelector('div.tab');
-          const mesCommandes = document.querySelector('section.content');
-                fetch('./datajson/historique.json')
-                  .then(res => res.json())
-                  .then(data =>{
-                    let commandes = data;
-                    console.log(commandes);
+      
 
+<<<<<<< HEAD
                     commandes.forEach(p => {
                       mesBoutons.insertAdjacentHTML('beforeend', `<button class="tablinks" onclick="commandee(event, '${p.numeroCommande}')">${p.numeroCommande}</button>`)
                       mesCommandes.insertAdjacentHTML('beforeend', `<div id="${p.numeroCommande}" class="tabcontent"><h3>${p.numeroCommande}</h3>
@@ -70,6 +76,36 @@
                   })
         </script>
       </section>
+=======
+      <script>
+        const mesBoutons = document.querySelector('div.tab');
+        const mesCommandes = document.querySelector('section.content');
+              fetch('./datajson/historique.json')
+                .then(res => res.json())
+                .then(data =>{
+                  let commandes = data;
+                  console.log(commandes);
+
+                  commandes.forEach(p => {
+                    mesBoutons.insertAdjacentHTML('beforeend', `<button class="tablinks" onclick="commandee(event, '${p.numeroCommande}')">${p.numeroCommande}</button>`)
+                    mesCommandes.insertAdjacentHTML('beforeend', `<div id="${p.numeroCommande}" class="tabcontent"><h3>${p.numeroCommande}</h3>
+                    <p>Commande au nom de ${p.nom}
+                    <br>
+                    ${p.commande}<br>
+                    Prix total de la commande (taxes incluses) : ${p.prix}
+                    <br>${p.date}
+                    <br> Adresse : ${p.adresse}
+                    </p>
+                    </div>`);
+                    
+                  });
+                  tabcontent = document.getElementsByClassName("tabcontent");
+                  for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                  }
+                })
+      </script>
+>>>>>>> d407f30f5626b493a05250c97bfc000de6c4a361
       
 
       <script> /*Fonction qui permet d'afficher toutes les commandes et d'afficher la description d'une seule commande à la fois */
