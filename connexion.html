@@ -68,7 +68,24 @@
 
         <script type="module" src="connection.js"></script><!--script qui permet d'utiliser le code javascrypt de connection-->
         <script type="module" src="user.js"></script><!--script qui permet d'utiliser le code javascrypt de connection-->
-
+        <script>
+            // Function to fetch and parse JSON file
+            function readJSONFile(filename, callback) {
+                fetch(filename)
+                    .then(response => response.json())
+                    .then(data => callback(data))
+                    .catch(error => console.error('Error reading JSON file:', error));
+            }
+    
+            // Usage: Call the function with the file name and a callback to handle the data
+            readJSONFile('datajson/user.json', function(data) {
+                // Do something with the data
+                console.log(data);
+    
+                // Example: Display the data in the HTML
+                document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+            });
+        </script>
         <!-- bas de page -->
         <footer>
 
