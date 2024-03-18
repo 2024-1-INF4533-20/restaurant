@@ -95,10 +95,10 @@
     <section class="row justify-content-center">
       <div class="col-auto">
         <h3 id="tablePates">Nos Pâtes</h3>
-        <table class="table">
+        <table class="table" id="tableMesPates">
 
           <script>
-            const mesPates = document.querySelector('table');
+            const mesPates = document.querySelector('table#tableMesPates');
             var compteur = 1;
             fetch('./datajson/menu.json')
               .then(res => res.json())
@@ -106,7 +106,7 @@
                 let pates = data.filter(produit => produit.type == "Pates");
                 var row = mesPates.insertRow(0);
                 pates.forEach(p => {
-                  if(compteur>4)
+                  if(compteur>6)
                   {
                     
                     compteur = 0;
