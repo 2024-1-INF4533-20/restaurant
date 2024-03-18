@@ -1,3 +1,4 @@
+const fs = require("fs");
 function sauvegarde(JSONString, nomdefichier){ //pour sauvegarder les modifications dans le fichier user.json
     fs.writeFileSync(nomdefichier, JSONString);
 }
