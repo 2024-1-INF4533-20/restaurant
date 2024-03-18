@@ -47,24 +47,6 @@
       <!--<div id="Commande1" class="tabcontent"> div qui contient les informations de la commande-->
       
 
-<<<<<<< HEAD
-                    commandes.forEach(p => {
-                      mesBoutons.insertAdjacentHTML('beforeend', `<button class="tablinks" onclick="commandee(event, '${p.numeroCommande}')">${p.numeroCommande}</button>`)
-                      mesCommandes.insertAdjacentHTML('beforeend', `<div id="${p.numeroCommande}" class="tabcontent"><h3>${p.numeroCommande}</h3>
-                      <p>Commande au nom de ${p.nom}
-                      <br>
-                      ${p.commande}<br>
-                      Prix total de la commande (taxes incluses) : ${p.prix}
-                      <br>${p.date}
-                      <br> Adresse : ${p.adresse}
-                      </p>
-                      </div>`);
-                      
-                    });
-                  })
-        </script>
-      </section>
-=======
       <script>
         const mesBoutons = document.querySelector('div.tab');
         const mesCommandes = document.querySelector('section.content');
