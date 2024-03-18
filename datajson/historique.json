@@ -1,5 +1,6 @@
 [
     {
+        "numeroCommande": "Commande 1",
         "nom": "Francis Lavigne",
         "commande": [
             "Pepperoni Fromage",
@@ -10,6 +11,7 @@
         "adresse": "789 Rue du King"
     },
     {
+        "numeroCommande": "Commande 2",
         "nom": "Francis Lavigne",
         "commande": [
             "Carnivore",
@@ -26,6 +28,7 @@
         "adresse": "789 Rue du King"
     },
     {
+        "numeroCommande": "Commande 3",
         "nom": "Francis Lavigne",
         "commande": [
             "Carnivore",
@@ -35,5 +38,6 @@
         "date": "15:00 6 Février 2024",
         "adresse": "789 Rue du King"
     }
-
+    
+    
 ]
