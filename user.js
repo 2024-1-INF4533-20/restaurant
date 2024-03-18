@@ -1,8 +1,31 @@
-const fs = require("fs");
+let users = [];
 
-function sauvegarde(JSONString, nomdefichier){ //pour sauvegarder les modifications dans le fichier user.json
-    fs.writeFileSync(nomdefichier, JSONString);
+fetch('datajson/user.json')
+  .then(response => response.json())
+  .then(data => {
+    users = data;
+    console.log('Fetched data:', users);
+  })
+  .catch(error => {
+    console.error('Error fetching users data:', error);
+  });
+
+  function seConnecter() {
+    const courriel = document.getElementById("courrielSignIn").value;
+    const motDePasse = document.getElementById("motDePasseSignIn").value;
+
+
+    const user = users.find(user => {
+        return (user.courriel === courriel || user.motDePasse === courriel) && user.password === motDePasse;
+    });
+
+    if (user) {
+        alert("Connexion réussie!");
+    } else {
+        alert("Courriel ou mot de passe invalide!");
+    }
 }
+
 
 function ajouteruser(){  //ajoute un user dans le fichier user.json en utilisant sauvegarde()
     const nom = document.getElementById("RegisterNom").value;

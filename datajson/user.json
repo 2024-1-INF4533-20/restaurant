@@ -1,1 +1,4 @@
-[{"nom":"alex","courriel":"alex@gmail.com","motDePasse":"1234"}]
+[
+    {"courriel": "alex@uqo.ca", "password": "1234"},
+    {"motDePasse": "admin@uqo.ca", "password": "admin"}
+]

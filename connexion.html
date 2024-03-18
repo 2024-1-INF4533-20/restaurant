@@ -42,10 +42,10 @@
                 <form>
                     <h1>Se connecter</h1>
                     <span>Utiliser votre courriel et mot de passe</span>
-                    <input type="email" placeholder="Courriel">
-                    <input type="password" placeholder="Mot de passe">
+                    <input type="email" placeholder="Courriel" id="courrielSignIn">
+                    <input type="password" placeholder="Mot de passe" id="motDePasseSignIn">
                     <a href="#">Mot de passe oublié?</a>
-                    <button>Se connecter</button>
+                    <button onclick="seConnecter()" id="signinBtn">Se connecter</button>
                 </form>
             </div>
             <div class="toggle-container">
@@ -67,8 +67,8 @@
         </div>
 
         <script type="module" src="connection.js"></script><!--script qui permet d'utiliser le code javascrypt de connection-->
-        <script type="module" src="user.js"></script><!--script qui permet d'utiliser le code javascrypt de connection-->
-        <script>
+        <script src="user.js"></script><!--script qui permet d'utiliser le code javascrypt de connection-->
+        <!-- <script>
             // Function to fetch and parse JSON file
             function readJSONFile(filename, callback) {
                 fetch(filename)
@@ -85,7 +85,7 @@
                 // Example: Display the data in the HTML
                 document.getElementById('output').innerText = JSON.stringify(data, null, 2);
             });
-        </script>
+        </script> -->
         <!-- bas de page -->
         <footer>
 
