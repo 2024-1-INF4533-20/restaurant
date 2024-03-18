@@ -1,4 +1,4 @@
-const fs = require('fs');
+/*const fs = require('fs');
 const path = require('path');
 
 //module.exports = Repas
@@ -31,4 +31,38 @@ function ajoutaupanier(ID,TYPE,NOM,INGREDIENTS,PRIX){
 
 function enleverunproduit(){
 
+}*/
+const fs = require("fs");
+function sauvegarde(JSONString, nomdefichier){ //pour sauvegarder les modifications dans le fichier user.json
+    fs.writeFileSync(nomdefichier, JSONString);
 }
+function ajouterproduit(id){  //ajoute un user dans le fichier user.json en utilisant sauvegarde()
+    alert("test");
+    let monProduit = id;
+    let produitTrouve ;
+    fs.readFile("datajson/menu.json", (error, data) => {
+        if(error){
+            console.error(error);
+            throw err;
+        }
+        let menu = JSON.parse(data);
+        console.log(menu);
+        produitTrouve = menu.find(produit => produit.id == monProduit);
+        console.log(produitTrouve);
+    })
+    
+
+    fs.readFile("datajson/panier.json", (error, data) => {
+        if(error){
+            console.error(error);
+            throw err;
+        }
+        let paniers = JSON.parse(data);
+        paniers.panier.push(produitTrouve);
+        sauvegarde(JSON.stringify(paniers), "datajson/panier.json");
+        console.log(paniers);
+    })
+    
+}
+
+ //test pour ajouter un user dans user.json
