@@ -10,7 +10,7 @@ function ajouteruser(user){  //ajoute un user dans le fichier user.json en utili
         }
         let users = JSON.parse(data);
         users.user.push(user);
-        sauvegarde(JSON.stringify(users), "datajon/user.json");
+        sauvegarde(JSON.stringify(users), "datajson/user.json");
         console.log(users);
     })
 }
