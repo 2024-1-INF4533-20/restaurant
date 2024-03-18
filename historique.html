@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+<!--<h3>Commande 1</h3>
+<p>Commande au nom de Francis Lavigne
+  <br>
+  2X Pepperoni Fromage<br>
+  1X La Toute Garnie<br>
+  1X Linguini Alfredo<br>
+  Prix total de la commande (taxes incluses) : 97,70$
+  <br>20:21 4 Février 2024
+  <br> Adresse : 789 Rue du King
+</p>-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,23 +38,40 @@
   <div class="background backcomplet">
     <section class="row justify-content-center"><!--Section de la liste de l'historique des commandes-->
       <div class="tab">
-        <button class="tablinks" onclick="commandee(event, 'Commande1')" id="defaultOpen">Commande 1</button>
-        <button class="tablinks" onclick="commandee(event, 'Commande2')">Commande 2</button>
-        <button class="tablinks" onclick="commandee(event, 'Commande3')">Commande 3</button>
+        <!--<button class="tablinks" onclick="commandee(event, 'Commande 1')" id="defaultOpen">Commande 1</button>
+        <button class="tablinks" onclick="commandee(event, 'Commande 2')">Commande 2</button>
+        <button class="tablinks" onclick="commandee(event, 'Commande 3')">Commande 3</button>-->
       </div>
 
-      <div id="Commande1" class="tabcontent"> <!--div qui contient les informations de la commande-->
-        <h3>Commande 1</h3>
-        <p>Commande au nom de Francis Lavigne
-          <br>
-          2X Pepperoni Fromage<br>
-          1X La Toute Garnie<br>
-          1X Linguini Alfredo<br>
-          Prix total de la commande (taxes incluses) : 97,70$
-          <br>20:21 4 Février 2024
-          <br> Adresse : 789 Rue du King
-        </p>
-      </div>
+      <!--<div id="Commande1" class="tabcontent"> div qui contient les informations de la commande-->
+      <section class="content">
+        <script>
+          const mesBoutons = document.querySelector('div.tab');
+          const mesCommandes = document.querySelector('section.content');
+                fetch('./datajson/historique.json')
+                  .then(res => res.json())
+                  .then(data =>{
+                    let commandes = data;
+                    console.log(commandes);
+
+                    commandes.forEach(p => {
+                      mesBoutons.insertAdjacentHTML('beforeend', `<button class="tablinks" onclick="commandee(event, '${p.numeroCommande}')">${p.numeroCommande}</button>`)
+                      mesCommandes.insertAdjacentHTML('beforeend', `<div id="${p.numeroCommande}" class="tabcontent"><h3>${p.numeroCommande}</h3>
+                      <p>Commande au nom de ${p.nom}
+                      <br>
+                      ${p.commande}<br>
+                      Prix total de la commande (taxes incluses) : ${p.prix}
+                      <br>${p.date}
+                      <br> Adresse : ${p.adresse}
+                      </p>
+                      </div>`);
+                      
+                    });
+                  })
+        </script>
+      </section>
+      <!--</div>
+        
 
       <div id="Commande2" class="tabcontent">
         <h3>Commande 2</h3>
@@ -75,7 +101,7 @@
           <br> Adresse : 789 Rue du King
 
         </p>
-      </div>
+      </div>-->
 
       <script> /*Fonction qui permet d'afficher toutes les commandes et d'afficher la description d'une seule commande à la fois */
         function commandee(evt, commandenom) {
