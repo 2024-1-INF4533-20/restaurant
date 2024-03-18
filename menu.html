@@ -39,9 +39,9 @@
     <section class="row justify-content-center">
       <div class="col-auto">
         <h3 id="tablePizza">Nos Pizzas</h3>
-        <table class="table">
+        <table class="table" id="tableMesPizza">
               <script>
-                const mesPizza = document.querySelector('table');
+                const mesPizza = document.querySelector('table#tableMesPizza');
                 var compteur = 1;
                 fetch('./datajson/menu.json')
                   .then(res => res.json())
