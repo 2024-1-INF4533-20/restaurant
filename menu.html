@@ -97,6 +97,54 @@
         <h3 id="tablePates">Nos Pâtes</h3>
         <table class="table">
 
+          <script>
+            const mesPates = document.querySelector('table');
+            var compteur = 1;
+            fetch('./datajson/menu.json')
+              .then(res => res.json())
+              .then(data =>{
+                let pates = data.filter(produit => produit.type == "Pates");
+                var row = mesPates.insertRow(0);
+                pates.forEach(p => {
+                  if(compteur>4)
+                  {
+                    
+                    compteur = 0;
+                    console.log("je suis à 4");
+                    row = mesPates.insertRow(-1);
+                    
+                  } 
+                    var mycell = row.insertCell(-1);
+                    mycell.innerHTML =`
+                  <td>
+                    <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
+                      <img class="card-img-top" src="${p.image}" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title">${p.nom}</h5>
+                        <p class="card-text">${p.ingredients}</p>
+                        <table>
+                          <tr>
+                            <td>
+                              <a href="#" class="btn   ">Ajouter au panier</a>
+                            </td>
+                            <td>
+                              <div class="hide">
+                                <p class="prix-item">${p.prix}</p>
+                              </div>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </td>                      
+                  `;
+                  compteur++;
+                  }
+                  
+                );
+              })
+          </script>
+          <!--
           <tr>
             <td>
               <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
@@ -209,7 +257,7 @@
                 </div>
               </div>
             </td>
-          </tr>
+          </tr>-->
         </table>
 
       </div>
