@@ -50,14 +50,24 @@
                 .then(res => res.json())
                 .then(data =>{
                   let commandes = data;
-                  console.log(commandes);
-
-                  commandes.forEach(p => {
-                    mesBoutons.insertAdjacentHTML('beforeend', `<button class="tablinks" onclick="commandee(event, '${p.numeroCommande}')">${p.numeroCommande}</button>`)
-                    mesCommandes.insertAdjacentHTML('beforeend', `<div id="${p.numeroCommande}" class="tabcontent"><h3>${p.numeroCommande}</h3>
+                  // console.log(commandes);
+                  
+                  fetch('./datajson/menu.json')
+                  .then(res => res.json())
+                  .then(data =>{
+                    let menu = data;
+                    commandes.forEach(p => {
+                    var mesItems ="";
+                    p.commande.forEach(i => {
+                                             
+                    mesItems += `${menu.find( item => item.id == i.id).nom} x${i.qte}, `;
+                    });
+                    mesBoutons.insertAdjacentHTML('beforeend', `<button class="tablinks" onclick="commandee(event, '${p.numeroCommande}')">Commande ${p.numeroCommande}</button>`)
+                    mesCommandes.insertAdjacentHTML('beforeend', `<div id="${p.numeroCommande}" class="tabcontent"><h3>Commande ${p.numeroCommande}</h3>
                     <p>Commande au nom de ${p.nom}
                     <br>
-                    ${p.commande}<br>
+                      ${mesItems}
+                    <br>
                     Prix total de la commande (taxes incluses) : ${p.prix}
                     <br>${p.date}
                     <br> Adresse : ${p.adresse}
@@ -70,6 +80,12 @@
                   for (i = 0; i < tabcontent.length; i++) {
                     tabcontent[i].style.display = "none";
                   }
+
+                  });
+
+                  
+
+
                 })
       </script>
       

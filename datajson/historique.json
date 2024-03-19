@@ -1,41 +1,29 @@
 [
     {
-        "numeroCommande": "Commande 1",
+        "numeroCommande": "1",
         "nom": "Francis Lavigne",
-        "commande": [
-            "Pepperoni Fromage",
-             "La Toute Garnie", 
-             "Linguini Alfredo"],
+        "commande": [{"id":1,"qte":1},{"id":8,"qte":1},{"id":15,"qte":1}],
         "prix" : "97,70$",
         "date": "20:21 4 Février 2024",
         "adresse": "789 Rue du King"
-    },
-    {
-        "numeroCommande": "Commande 2",
+    },{
+        "numeroCommande": "2",
         "nom": "Francis Lavigne",
         "commande": [
-            "Carnivore",
-            "Carnivore",
-            "Carnivore",
-             "Méditérrannée", 
-             "Boisson fontaine",
-             "Café",
-             "Café",
-             "Café",
-             "Thé"],
+            {"id":7, "qte":3},
+            {"id":6, "qte":1}, 
+            {"id":15,"qte":1},
+            {"id":13, "qte":3},
+            {"id":14, "qte":1}],
         "prix" : "137,86$",
         "date": "16:00 5 Février 2024",
         "adresse": "789 Rue du King"
-    },
-    {
-        "numeroCommande": "Commande 3",
+    },{
+        "numeroCommande": "3",
         "nom": "Francis Lavigne",
-        "commande": [
-            "Carnivore",
-             "Boisson fontaine",
-             "Café"],
-        "prix" : "35,04$",
-        "date": "15:00 6 Février 2024",
+        "commande": [{"id":7,"qte":1},{"id":15,"qte":1},{"id":13,"qte":1}],
+        "prix" : "97,70$",
+        "date": "20:21 4 Février 2024",
         "adresse": "789 Rue du King"
     }
     
