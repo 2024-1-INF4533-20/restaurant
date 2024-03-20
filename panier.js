@@ -7,22 +7,10 @@ function displayPanier() {
     let currentPanier = sessionStorage.getItem("panier");
     if (currentPanier.length>0) {
         currentPanier = JSON.parse(currentPanier);
-        panier = currentPanier;
-
-        let panierHTML = "";
-        //affiche en console
+        console.log(currentPanier)
         currentPanier.forEach(e => {
-            panierHTML+= `<tr>
-            <th>${e.id}</th>
-            <td>${e.nom}</td>
-            <td> 3</td>
-            <td>${e.prix}$</td>
-            <td><button type="button"> - </button></td>
-          </tr>`;
+            console.log(e.nom);
         });
-
-        console.log(panierHTML); //TODO: monPanier.innerHTML = panierHTML ou de quoi de similaire
-
     } else {
         console.log("panier vide");
     }
@@ -35,17 +23,21 @@ function ajouterAuPanier(itemId){
         let menu = data;
         let monItem = menu.find( item => item.id == itemId)
         panier.push(monItem);    
-        
+        console.log("nouveau panier "+panier)
         enregistrerPanier();    
     
     });
       
 }
 
+function testAjoutTrigger(itemId){
+    alert("test ajout de l'item "+itemId);
+}
+
 function enregistrerPanier(){
-    
+    console.log("panier")
     sessionStorage.setItem("panier",JSON.stringify(panier)); //pas sûr que j'enregistre comme du monde... :(
-    displayPanier(); //affiche les items ajoutés POUR DEBUG 
+    displayPanier()
 }
 
 function supprimerToutPanier() {
