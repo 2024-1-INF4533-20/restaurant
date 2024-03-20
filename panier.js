@@ -5,7 +5,7 @@ let panier = [];
 
 function displayPanier() {
     let currentPanier = sessionStorage.getItem("panier");
-    if (currentPanier.length>0) {
+    if (currentPanier.length>0 && currentPanier) {
         currentPanier = JSON.parse(currentPanier);
         console.log(currentPanier)
         currentPanier.forEach(e => {
