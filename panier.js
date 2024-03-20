@@ -1,3 +1,35 @@
+const monPanier = document.getElementById("panierContenu");
+let panier = []
+
+
+
+function displayPanier() {
+    let currentPanier = sessionStorage.getItem("panier");
+    if (currentPanier) {
+        console.log("Bingo: " + currentPanier);
+    } else {
+        console.log("panier vide");
+    }
+}
+
+function ajouterAuPanier(itemId){
+    fetch('./datajson/menu.json')
+        .then(res => res.json())
+        .then(data =>{
+        let menu = data;});
+        let monItem = menu.find( item => item.id == i.id)
+
+        panier.push(monItem);    
+        enregistrerPanier;
+}
+
+function enregistrerPanier(){
+
+    sessionStorage.setItem("panier",panier);
+}
+
+window.onload = displayPanier;
+
 /*const fs = require('fs');
 const path = require('path');
 
@@ -32,6 +64,7 @@ function ajoutaupanier(ID,TYPE,NOM,INGREDIENTS,PRIX){
 function enleverunproduit(){
 
 }*/
+/*
 const fs = require("fs");
 function sauvegarde(JSONString, nomdefichier){ //pour sauvegarder les modifications dans le fichier user.json
     fs.writeFileSync(nomdefichier, JSONString);
@@ -64,5 +97,5 @@ function ajouterproduit(id){  //ajoute un user dans le fichier user.json en util
     })
     
 }
-
+*/
  //test pour ajouter un user dans user.json
