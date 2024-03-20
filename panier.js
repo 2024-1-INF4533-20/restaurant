@@ -5,7 +5,7 @@ let panier = [];
 
 function displayPanier() {
     let currentPanier = sessionStorage.getItem("panier");
-    if (currentPanier) {
+    if (currentPanier.length>0) {
         currentPanier = JSON.parse(currentPanier);
         panier = currentPanier;
 
@@ -46,6 +46,11 @@ function enregistrerPanier(){
     
     sessionStorage.setItem("panier",JSON.stringify(panier)); //pas sûr que j'enregistre comme du monde... :(
     displayPanier(); //affiche les items ajoutés POUR DEBUG 
+}
+
+function supprimerToutPanier() {
+    panier = [];
+    sessionStorage.setItem("panier", "");
 }
 
 window.onload = displayPanier;
