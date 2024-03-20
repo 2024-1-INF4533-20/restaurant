@@ -1,12 +1,14 @@
 const monPanier = document.getElementById("panierContenu");
-let panier = []
+let panier = [];
 
 
 
 function displayPanier() {
     let currentPanier = sessionStorage.getItem("panier");
     if (currentPanier) {
-        console.log("Bingo: " + currentPanier);
+        currentPanier.forEach(e => {
+            console.log(e.nom);
+        });
     } else {
         console.log("panier vide");
     }
@@ -16,16 +18,24 @@ function ajouterAuPanier(itemId){
     fetch('./datajson/menu.json')
         .then(res => res.json())
         .then(data =>{
-        let menu = data;});
+        let menu = data;
         let monItem = menu.find( item => item.id == itemId)
-
+        
         panier.push(monItem);    
-        enregistrerPanier;
+        console.log("nouveau panier "+panier)
+        enregistrerPanier();    
+    
+    });
+      
+}
+
+function testAjoutTrigger(itemId){
+    alert("test ajout de l'item "+itemId);
 }
 
 function enregistrerPanier(){
-
-    sessionStorage.setItem("panier",panier);
+    console.log("panier")
+    sessionStorage.setItem("panier",panier); //pas sûr que j'enregistre comme du monde... :(
 }
 
 window.onload = displayPanier;
