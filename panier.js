@@ -17,7 +17,7 @@ function ajouterAuPanier(itemId){
         .then(res => res.json())
         .then(data =>{
         let menu = data;});
-        let monItem = menu.find( item => item.id == i.id)
+        let monItem = menu.find( item => item.id == itemId)
 
         panier.push(monItem);    
         enregistrerPanier;
