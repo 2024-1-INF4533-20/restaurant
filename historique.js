@@ -1,27 +1,27 @@
 const mesBoutons = document.querySelector('div.tab');
 const mesCommandes = document.querySelector('section.content');
-let historique = [];
-let HistoriqueJSON = [];
+let historique = JSON.parse(sessionStorage.getItem("historique"));
 
 window.onload = onLoadTrigger();
 
 function onLoadTrigger() {
-  
-  displayHistorique();
+
+  if(historique){
+    displayHistorique();
+  }
 }
 
 
-
+if(!historique){
   fetch('./datajson/historique.json')
-    .then(res => res.json())
-    .then(data => {
-        console.log("premier log");
-        HistoriqueJSON = data;
-        HistoriqueJSON.forEach(e => {
-        historique.push(e);
-      });
-      enregistrerHistorique();
-    });
+  .then(res => res.json())
+  .then(data => {
+    //console.log(data);
+    historique = data;
+    enregistrerHistorique();
+  });
+}
+
 
 function enregistrerHistorique() {
   sessionStorage.setItem("historique", JSON.stringify(historique));
@@ -31,11 +31,12 @@ function enregistrerHistorique() {
 function displayHistorique() {
   let currentHistorique = sessionStorage.getItem("historique");
   currentHistorique = JSON.parse(currentHistorique);
+  
+
   let bouttonHTML = "";
   let historiqueHTML = "";
 
   let commandes = currentHistorique;
-
   fetch('./datajson/menu.json')
     .then(res => res.json())
     .then(data => {
