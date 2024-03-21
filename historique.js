@@ -5,9 +5,8 @@ let historique = [];
 window.onload = onLoadTrigger();
 
 function onLoadTrigger() {
-  console.log("log");
-  getHistoriqueJSON().then(
-    displayHistorique());
+  getHistoriqueJSON()
+  displayHistorique();
 }
 
 function getHistoriqueJSON() {
@@ -15,12 +14,14 @@ function getHistoriqueJSON() {
     .then(res => res.json())
     .then(data => {
       historique = data;
+      console.log(historique)
+      enregistrerHistorique();
       let currentHistorique = sessionStorage.getItem("historique");
       if (currentHistorique) {
         if (currentHistorique.length > 0) {
-          console.log("historique get pre parse"+currentHistorique);
           currentHistorique = JSON.parse(currentHistorique);
-          historique += currentHistorique;
+          historique+=currentHistorique;
+          console.log(historique)
         }
       }
       

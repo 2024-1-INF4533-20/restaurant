@@ -5,58 +5,59 @@ let panier = [];
 
 function displayPanier() {
     let currentPanier = sessionStorage.getItem("panier");
-    if (currentPanier ) {
-        if (currentPanier.length>0) {          
-        let prixTOTAL = 0;
-        currentPanier = JSON.parse(currentPanier);
-        panier = currentPanier;
-        let panierHTML = "";
-        fetch('./datajson/menu.json')
-            .then(res => res.json())
-            .then(data => {
-                let menu = data;
-                menu.forEach(p => {
-                    let cp = 0;
-                    let qt = 0;
-                    let  prixT = 0;
-                    currentPanier.forEach(e => {
-                        if (p.id == e.id) {
-                            qt += 1;
-                            
-                            
-                            prixT += parseFloat(p.prix);
-                        }
-                    });
+    if (currentPanier) {
+        if (currentPanier.length > 0) {
+            let prixTOTAL = 0;
+            currentPanier = JSON.parse(currentPanier);
+            panier = currentPanier;
+            let panierHTML = "";
+            fetch('./datajson/menu.json')
+                .then(res => res.json())
+                .then(data => {
+                    let menu = data;
+                    menu.forEach(p => {
+                        let cp = 0;
+                        let qt = 0;
+                        let prixT = 0;
+                        currentPanier.forEach(e => {
+                            if (p.id == e.id) {
+                                qt += 1;
 
-                    
-                    cp = 1;
-                    currentPanier.forEach(e => {
-                        if (p.id == e.id && cp==1) {
-                            
-                            panierHTML = `<tr>
+
+                                prixT += parseFloat(p.prix);
+                            }
+                        });
+
+
+                        cp = 1;
+                        let index = 0
+                        currentPanier.forEach(e => {
+                            if (p.id == e.id && cp == 1) {
+                                panierHTML = `<tr>
                             <td>${e.nom}</td>
                             <td> ${qt} </td>
-                            <td>${prixT}$</td>
-                            <td><button type="button"> - </button></td>
+                            <td>${prixT.toFixed(2)}$</td>
+                            <td><button type="button" onclick="supprimer(${index})"> - </button></td>
                             </tr>`;
-                            if(document.getElementById("panierContenu")){
-                                document.getElementById("panierContenu").innerHTML  += panierHTML;
+                                if (document.getElementById("panierContenu")) {
+                                    document.getElementById("panierContenu").innerHTML += panierHTML;
+                                }
+                                cp++;
+                                prixTOTAL += prixT;
                             }
-                            cp++;
-                            prixTOTAL += prixT;
-                        }
-                    });
+                            index++;
+                        });
+                    })
+                    if (document.getElementById("prixTotal")) {
+                        let prixTOTALFixed = prixTOTAL.toFixed(2);
+                        document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTALFixed + "$";
+                    }
                 })
-                if(document.getElementById("prixTotal")){
-                    let prixTOTALFixed = prixTOTAL.toFixed(2);
-                    document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTALFixed+"$";
-                }
-            })
         }
     } else {
         console.log("panier vide");
     }
-
+    console.log(panier)
 
 }
 
@@ -71,6 +72,12 @@ function ajouterAuPanier(itemId) {
 
         });
 
+}
+function supprimer(itemId) {
+    panier.splice((itemId), 1);
+    enregistrerPanier();
+    console.log(panier)
+    location.reload()
 }
 
 function testAjoutTrigger(itemId) {
@@ -88,11 +95,11 @@ function supprimerToutPanier() {
     displayPanier();
 }
 
-function payer(){
-    $('form > input').keyup(function() {
+function payer() {
+    $('form > input').keyup(function () {
 
         var empty = false;
-        $('form > input').each(function() {
+        $('form > input').each(function () {
             if ($(this).val() == '') {
                 empty = true;
             }
@@ -101,11 +108,11 @@ function payer(){
         if (empty) {
             $('#payer').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
         } else {
-            $('#payer').removeAttr('disabled'); 
+            $('#payer').removeAttr('disabled');
             // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
             alert("payer");
         }
-        
+
     });
 }
 
