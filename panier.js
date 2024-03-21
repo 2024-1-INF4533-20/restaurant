@@ -109,4 +109,5 @@ function payer(){
     });
 }
 
+
 window.onload = displayPanier();
