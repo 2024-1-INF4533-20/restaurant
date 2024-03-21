@@ -25,7 +25,6 @@ function displayPanier() {
                             
                             
                             prixT += parseFloat(p.prix);
-                            
                         }
                     });
 
@@ -49,10 +48,9 @@ function displayPanier() {
                     });
                 })
                 if(document.getElementById("prixTotal")){
-                    console.log("Le prix total de votre facture est de " + prixTOTAL);
-                    document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTAL+"$";
+                    let prixTOTALFixed = prixTOTAL.toFixed(2);
+                    document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTALFixed+"$";
                 }
-                
             })
         }
     } else {
