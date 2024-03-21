@@ -26,7 +26,7 @@
       <li class="libr"><a href="panier.html">Mon panier</a></li>
       <li class="libr" id="connexionTab"><a href="connexion.html">Connexion</a></li>
       <li id="userDisplayName" style="display: none;"></li>
-  </ul>
+    </ul>
   </header>
   <div class="background">
     <section class="before-footer">
@@ -36,28 +36,29 @@
         <div class="contain">
           <div> <!--Information de paiement (carte)-->
             <label class="paiementlab" for="fname">*Prénom:</label>
-            <input type="text" id="fname" required><br><br>
+            <input type="text" id="fname" required onkeyup="success()"><br><br>
             <label class="paiementlab" for="lname">*Nom:</label>
-            <input type="text" id="lname" required><br><br>
+            <input type="text" id="lname" required onkeyup="success()"><br><br>
             <label class="paiementlab" for="numb">*Numéro de carte:</label>
-            <input type="text" id="numb" maxlength="16" required placeholder="xxxx-xxxx-xxxx-xxxx"><br><br>
+            <input type="text" id="numb" maxlength="16" required placeholder="xxxx-xxxx-xxxx-xxxx" onkeyup="success()"><br><br>
             <label class="paiementlab" for="exp">*Date d'expiration:</label>
-            <input type="month" id="exp" required><br><br>
+            <input type="month" id="exp" required onkeyup="success()"><br><br>
             <label class="paiementlab" for="codesec">*Code de sécurité:</label>
-            <input type="text" id="codesec" required><br><br>
-            <label class="paiementlab" for="check">Enregistrer la carte?</label><!--Checkbox pour enregistrer carte pour le prochain paiement-->
+            <input type="text" id="codesec" required onkeyup="success()"><br><br>
+            <label class="paiementlab" for="check">Enregistrer la
+              carte?</label><!--Checkbox pour enregistrer carte pour le prochain paiement-->
             <input type="checkbox" id="check"><br><br>
-            </div>
+          </div>
 
-            <div> <!--Information de livraison-->
+          <div> <!--Information de livraison-->
             <label class="paiementlab" for="numporte">*Adresse postale:</label>
-            <input type="text" id="numporte" required><br><br>
+            <input type="text" id="numporte" required onkeyup="success()"><br><br>
             <label class="paiementlab" for="ville">*Ville:</label>
-            <input type="text" id="ville" required><br><br>
+            <input type="text" id="ville" required onkeyup="success()"><br><br>
             <label class="paiementlab" for="codepost">*Code postale:</label>
-            <input type="text" id="codepost" required><br><br>
+            <input type="text" id="codepost" required onkeyup="success()"><br><br>
             <label class="paiementlab" for="province">*Province:</label>
-            <select name="province" id="province" required>
+            <select name="province" id="province" required onkeyup="success()">
               <option value="" label="Choisir une province"></option>
               <option value="Alberta">Alberta</option>
               <option value="Colombie Britannique">Colombie Britannique</option>
@@ -71,20 +72,37 @@
               <option value="Terre-Neuve-et-Labrador">Terre-Neuve-et-Labrador</option>
             </select><br><br>
             <label class="paiementlab" for="pays">*Pays:</label>
-            <select name="pays" id="pays" required>
+            <select name="pays" id="pays" required onkeyup="success()">
               <option value="" label="Choisir un pays"></option>
               <option value="Canada" selected="selected">Canada</option>
             </select><br><br>
             <label class="paiementlab" for="numtel">*Numéro <br>de téléphone:</label>
-            <input type="text" id="numtel" required><br><br>
-            <label class="paiementlab" for="check2">Enregistrer l'adresse?</label><!--Checkbox pour enregistrer adresse pour une prochaine livraison-->
+            <input type="text" id="numtel" required onkeyup="success()"><br><br>
+            <label class="paiementlab" for="check2">Enregistrer
+              l'adresse?</label><!--Checkbox pour enregistrer adresse pour une prochaine livraison-->
             <input type="checkbox" id="check2"><br><br>
           </div>
-          <input type="submit" id="payer" value="Payer" ><!-- à faire fonctionner plus tard -->
+          <input type="submit" id="payer" value="Payer" onclick="payerMonPanier()"
+            disabled="disabled"><!-- à faire fonctionner plus tard -->
+          <script>
+
+            function success() {
+              if (document.getElementById("fname").value == "" || document.getElementById("lname").value == "" || document.getElementById("numb").value == "" || document.getElementById("exp").value == "" || 
+              document.getElementById("codesec").value == "" || document.getElementById("numporte").value == "" || document.getElementById("ville").value == "" || document.getElementById("codepost").value == ""
+               || document.getElementById("province").value == "" || document.getElementById("pays").value == "" || document.getElementById("numtel").value == "") {
+                document.getElementById('payer').disabled = true;
+              } else {
+                document.getElementById('payer').disabled = false;
+              }
+            }
+
+            function payerMonPanier() {
+
+              payer();
+            }</script>
         </div>
       </form>
       <br>
-      <input type="submit" id="cheat" value="Cheat Payer" onclick="payer()">
     </section>
   </div>
 
