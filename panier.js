@@ -61,14 +61,14 @@ function displayPanier() { //affiche le panier dans la page panier.html
 
 }
 
-function ajouterAuPanier(itemId) {
-    fetch('./datajson/menu.json')
+function ajouterAuPanier(itemId) { // Ajout un element au tableau quand on clique sur le bouton pour ajouter un plat
+    fetch('./datajson/menu.json') // lire le fichier JSON menu.json
         .then(res => res.json())
         .then(data => {
-            let menu = data;
-            let monItem = menu.find(item => item.id == itemId)
-            panier.push(monItem);
-            enregistrerPanier();
+            let menu = data;//menu obtient les données de data
+            let monItem = menu.find(item => item.id == itemId) // cherche dans le menu un id équivalent au itemId
+            panier.push(monItem);// ajoute au panier
+            enregistrerPanier();//enregistre les changements
 
         });
 
