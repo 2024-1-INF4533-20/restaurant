@@ -74,16 +74,12 @@ function displayHistorique() {
 }
 
 function payer() {
-  let currentHistorique = sessionStorage.getItem("historique");
-  currentHistorique = JSON.parse(currentHistorique);
-  let numeroCommande = currentHistorique.length + 1;
-  let nom = document.getElementById("fname").value + " " + document.getElementById("lname").value
 
-  let commande = []
-  let prix = 1;
   let currentPanier = sessionStorage.getItem("panier");
+  let commande = []
   if (currentPanier) {
     if (currentPanier.length > 0) {
+      let prixTOTAL = 0;
       currentPanier = JSON.parse(currentPanier);
       panier = currentPanier;
       fetch('./datajson/menu.json') //va chercher les elements du menu dans menu.json
@@ -104,35 +100,45 @@ function payer() {
               }
             });
 
+            
             cp = 1;
-           currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.html
+            currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.html
               if (p.id == e.id && cp == 1) {
-                commande.push({"id":e.id,"qte":qt})
-                console.log(prixT);
-                console.log(prix)
+                commande.push({ "id": e.id, "qte": qt })
+                prixTOTAL += prixT;
                 cp++;
               }
             });
           })
+          let currentHistorique = sessionStorage.getItem("historique");
+          currentHistorique = JSON.parse(currentHistorique);
+          let numeroCommande = currentHistorique.length + 1;
+          let nom = document.getElementById("fname").value + " " + document.getElementById("lname").value
+          let prix = prixTOTAL.toFixed(2);
+
+          let date = new Date();
+          let adresse = document.getElementById("numporte").value + ", " + document.getElementById("ville").value
+          let MaCommande = {
+            "numeroCommande": numeroCommande,
+            "nom": nom,
+            "commande": commande,
+            "prix": prix,
+            "date": date,
+            "adresse": adresse
+          }
+          console.log(MaCommande);
+          historique.push(MaCommande);
+          enregistrerHistorique();
+          supprimerToutPanier();
+          window.location.assign("./historique.html");
         })
-    }}
-
-
-    let date = new Date();
-    let adresse = document.getElementById("numporte").value + ", " + document.getElementById("ville").value
-
-    let MaCommande = {
-      "numeroCommande": numeroCommande,
-      "nom": nom,
-      "commande": commande,
-      "prix":prix,
-      "date": date,
-      "adresse": adresse
     }
-    console.log(MaCommande);
-    //supprimerToutPanier()
-    //window.location.assign("./historique.html");
-
   }
+
+
+
+
+
+}
 
 
