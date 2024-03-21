@@ -10,14 +10,16 @@
 //     console.error('Error fetching users data:', error);
 //   });
 
-
+// Fonction pour créer un compte utilisateur
 function createAccount() {
+    // Récupérer les valeurs des champs nom, courriel et mot de passe
     const nom = document.getElementById("registerNom").value;
     const courriel = document.getElementById("registerCourriel").value;
     const motDePasse = document.getElementById("registerMotDePasse").value;
 
     let usersData = JSON.parse(sessionStorage.getItem("usersData")) || [];
 
+    // Vérifier si un utilisateur avec le même courriel existe déjà
     const existingUser = usersData.find(user => user.courriel === courriel);
     if (existingUser) {
         alert("Un compte avec cet email existe déjà.");
