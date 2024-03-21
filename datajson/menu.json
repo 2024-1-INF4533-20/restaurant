@@ -3,7 +3,7 @@
     "type": "Pizza",
     "nom" : "La Toute Garnie",
     "ingredients": "Champignon, poivrons, pepperoni, mozzarella et sauce aux tomates",
-    "prix": "24,49",
+    "prix": "24.49",
     "image": "Images/Pizzas/allDressed.jpg"
 },
 {
@@ -11,7 +11,7 @@
     "type": "Pizza",
     "nom" : "Pepperoni Fromage",
     "ingredients": "Pepperoni, mozzarella et sauce aux tomates",
-    "prix": "22,49",
+    "prix": "22.49",
     "image": "Images/Pizzas/pepefro.jpg"
 },
 {
@@ -19,7 +19,7 @@
     "type": "Pizza",
     "nom" : "Hawaïenne",
     "ingredients": "Ananas, jambon, mozzarella et sauce aux tomates",
-    "prix": "22,49",
+    "prix": "22.49",
     "image": "Images/Pizzas/hawaian.jpg"
 },
 {
@@ -27,7 +27,7 @@
     "type": "Pizza",
     "nom" : "Végétarienne",
     "ingredients": "Champignon, poivrons, olives, oignons et sauce aux tomates",
-    "prix": "23,79",
+    "prix": "23.79",
     "image": "Images/Pizzas/vege.jpg"
 },
 {
@@ -35,7 +35,7 @@
     "type": "Pizza",
     "nom" : "Poulet BBQ",
     "ingredients": "Poulet blanc, oignons vrts, tomates, mozzarella et sauce BBQ",
-    "prix": "26,99",
+    "prix": "26.99",
     "image": "Images/Pizzas/poulet.jpg" 
 },
 {
@@ -43,7 +43,7 @@
     "type": "Pizza",
     "nom" : "Méditérrannée",
     "ingredients": "Tomates, olives, oignons, feta, mozzarella et sauce aux tomates",
-    "prix": "24,99",
+    "prix": "24.99",
     "image": "Images/Pizzas/mediteranee.jpg" 
 },
 {
@@ -51,7 +51,7 @@
     "type": "Pizza",
     "nom" : "Carnivore",
     "ingredients": "Pepperoni, jambon, bacon, mozzarella et sauce aux tomates",
-    "prix": "26,99",
+    "prix": "26.99",
     "image": "Images/Pizzas/carnivore.jpg" 
 },
 {
@@ -59,7 +59,7 @@
     "type": "Pates",
     "nom" : "Spaghetti sauce tomates",
     "ingredients": "Spaghetti, mozzarella et sauce aux tomates",
-    "prix": "15,49",
+    "prix": "15.49",
     "image": "Images/Pates/SpagTomates.jpg" 
 },
 {
@@ -67,7 +67,7 @@
     "type": "Pates",
     "nom" : "Spaghetti sauce à la viande",
     "ingredients": "Spaghetti, mozzarella et sauce à la viande",
-    "prix": "15,49",
+    "prix": "15.49",
     "image": "Images/Pates/SpagViande.jpg" 
 },
 {
@@ -75,7 +75,7 @@
     "type": "Pates",
     "nom" : "Linguini Alfredo",
     "ingredients": "Linguini, sauce Alfredo",
-    "prix": "15,49",
+    "prix": "15.49",
     "image": "Images/Pates/linguiniAlfred.jpg"  
 },
 {
@@ -83,7 +83,7 @@
     "type": "Pates",
     "nom" : "Linguini Carbonara",
     "ingredients": "Linguini, Sauce Carbonara",
-    "prix": "15,49",
+    "prix": "15.49",
     "image": "Images/Pates/linguiniCarb.jpg"  
 },
 {
@@ -91,7 +91,7 @@
     "type": "Pates",
     "nom" : "Lasagne",
     "ingredients": "lasagne, pepperoni, mozzarella et sauce à la viande",
-    "prix": "15,49",
+    "prix": "15.49",
     "image": "Images/Pates/lasagne.jpg" 
 },
 {
@@ -99,7 +99,7 @@
     "type": "Breuvages",
     "nom" : "Café",
     "ingredients": "sucre, cassonade, lait et crème offerts",
-    "prix": "1,99",
+    "prix": "1.99",
     "image": "Images/breuvages/cafe.jpg"  
 },
 {
@@ -107,7 +107,7 @@
     "type": "Breuvages",
     "nom" : "Thé",
     "ingredients": "choix de thé noir, vert ou orange pekoe",
-    "prix": "1,99",
+    "prix": "1.99",
     "image": "Images/breuvages/the.jpg"  
 },
 {
@@ -115,7 +115,7 @@
     "type": "Breuvages",
     "nom" : "Boisson fontaine",
     "ingredients": "Coke, Coke diète, Coke zéro, Racinette, Sprite, Fruitopia aux fraises, Fruitopia à l'orange, Mtn Dew",
-    "prix": "1,49",
+    "prix": "1.49",
     "image": "Images/breuvages/fontaine.jpg" 
 },
 {
@@ -123,6 +123,6 @@
     "type": "Breuvages",
     "nom" : "Jus",
     "ingredients": "Jus de pomme ou jus d'orange",
-    "prix": "2,49",
+    "prix": "2.49",
     "image": "Images/breuvages/jus.jpg"  
 }]
