@@ -31,22 +31,6 @@
   </header>
   
 
-  
-  <table class="table"> <!--Tableau contenant ce que le client a choisi-->
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Plat</th>
-        <th scope="col">Quantité</th>
-        <th scope="col">Prix</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody id="productList">
-
-    </tbody>
-    </table>
-
   <div class="background backcomplet">
     <section class="row justify-content-center" style="margin-left: 20%; margin-right: 20%;">
       <h2>Voici le contenu de votre commande:</h2>
@@ -54,7 +38,6 @@
       <table class="table"> <!--Tableau contenant ce que le client a choisi-->
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Plat</th>
             <th scope="col">Quantité</th>
             <th scope="col">Prix</th>
@@ -63,33 +46,11 @@
         </thead>
         <tbody id="panierContenu">
 
-          <tr>
-            <th>1</th>
-            <td> Carnivore</td>
-            <td> 3</td>
-            <td> 80,97$</td>
-            <td><button type="button"> - </button></td>
-            <!--Bouton qui permet de retirer une pizza carnivore du panier-->
-          </tr>
-
-          <tr>
-            <th>2</th>
-            <td> Poulet BBQ</td>
-            <td> 3</td>
-            <td> 80,97$</td>
-            <td><button type="button"> - </button></td>
-          </tr>
-
-          <tr>
-            <th>3</th>
-            <td> Lasagne</td>
-            <td> 1</td>
-            <td> 15,49$</td>
-            <td><button type="button"> - </button></td>
-          </tr>
+          <!-- le panier s'affiche ici -->
 
         </tbody>
       </table>
+      <p id="prixTotal"></p>
 
       <button type="button" onclick="supprimerToutPanier()">Supprimer tout mon panier</button> <!--Bouton qui permet de supprimer toute la commande-->
 

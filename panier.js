@@ -1,13 +1,12 @@
-const monPanier = document.getElementById("panierContenu");
+
 let panier = [];
 
 
 
 function displayPanier() {
     let currentPanier = sessionStorage.getItem("panier");
-    if (currentPanier) {
+    if (currentPanier ) {
         if (currentPanier.length>0) {          
-        
         let prixTOTAL = 0;
         currentPanier = JSON.parse(currentPanier);
         panier = currentPanier;
@@ -29,24 +28,26 @@ function displayPanier() {
                             
                         }
                     });
+
+                    
                     cp = 1;
                     currentPanier.forEach(e => {
                         if (p.id == e.id && cp==1) {
                             
                             panierHTML = `<tr>
-            <th>${e.id}</th>
-            <td>${e.nom}</td>
-            <td> ${qt} </td>
-            <td>${prixT}$</td>
-            <td><button type="button"> - </button></td>
-          </tr>`;
-                            console.log(panierHTML);
+                            <td>${e.nom}</td>
+                            <td> ${qt} </td>
+                            <td>${prixT}$</td>
+                            <td><button type="button"> - </button></td>
+                            </tr>`;
+                            document.getElementById("panierContenu").innerHTML  += panierHTML;
                             cp++;
                             prixTOTAL += prixT;
                         }
                     });
                 })
                 console.log("Le prix total de votre facture est de " + prixTOTAL);
+                document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTAL+"$";
             })
         }
     } else {
@@ -74,14 +75,14 @@ function testAjoutTrigger(itemId) {
 }
 
 function enregistrerPanier() {
-    sessionStorage.setItem("panier", JSON.stringify(panier)); //pas sûr que j'enregistre comme du monde... :(
-    displayPanier()
+    sessionStorage.setItem("panier", JSON.stringify(panier));
 }
 
 function supprimerToutPanier() {
     panier = [];
     sessionStorage.setItem("panier", "");
+    location.reload();
+    displayPanier();
 }
 
-//TODO découvrir pourquoi le onload ne fonctionne pas 
 window.onload = displayPanier();
