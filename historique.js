@@ -130,7 +130,7 @@ function payer() {
           historique.push(MaCommande);
           enregistrerHistorique();
           supprimerToutPanier();
-          window.location.assign("./historique.html");
+          window.location.assign("./historique.html"); //envoie le user vers la page historique
         })
     }
   }
