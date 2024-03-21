@@ -1,9 +1,9 @@
-
 let usersData = [];
 
 fetch('datajson/user.json')
     .then(response => response.json())
     .then(data => {
+        // Store loaded user data in the usersData array
         usersData = data;
         sessionStorage.setItem("usersData", JSON.stringify(usersData));
         console.log('Loaded user data:', usersData);
@@ -11,6 +11,8 @@ fetch('datajson/user.json')
     .catch(error => {
         console.error('Error loading user data:', error);
     });
+
+
 
 // Fonction pour créer un compte utilisateur
 function createAccount() {
