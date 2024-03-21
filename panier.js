@@ -33,7 +33,7 @@ function displayPanier() {
                     currentPanier.forEach(e => {
                         if (p.id == e.id && cp==1) {
                             
-                            panierHTML += `<tr>
+                            panierHTML = `<tr>
             <th>${e.id}</th>
             <td>${e.nom}</td>
             <td> ${qt} </td>
