@@ -1,34 +1,30 @@
-let usersData = [];
+let usersData = JSON.parse(sessionStorage.getItem("usersData"));
 
-fetch('datajson/user.json')
-    .then(response => response.json())
-    .then(data => {
-        // Store loaded user data in the usersData array
-        usersData = data;
-        sessionStorage.setItem("usersData", JSON.stringify(usersData));
-        console.log('Loaded user data:', usersData);
-    })
-    .catch(error => {
-        console.error('Error loading user data:', error);
-    });
+if (!usersData) {
+    fetch('datajson/user.json')
+        .then(response => response.json())
+        .then(data => {
+            usersData = data;
+            sessionStorage.setItem("usersData", JSON.stringify(usersData));
+            console.log('Loaded user data:', usersData);
+        })
+        .catch(error => {
+            console.error('Error loading user data:', error);
+        });
+}
 
-
-
-// Fonction pour créer un compte utilisateur
+// fonction pour créer un compte
 function createAccount() {
-    // Récupérer les valeurs des champs nom, courriel et mot de passe
     const nom = document.getElementById("registerNom").value;
     const courriel = document.getElementById("registerCourriel").value;
     const motDePasse = document.getElementById("registerMotDePasse").value;
 
-    // Vérifier si un utilisateur avec le même courriel existe déjà
     const existingUser = usersData.find(user => user.courriel === courriel);
     if (existingUser) {
         alert("Un compte avec cet email existe déjà.");
         return;
     }
 
-    // Création d'un utilisateur
     const newUser = { nom, courriel, motDePasse };
 
     usersData.push(newUser);
@@ -56,24 +52,3 @@ function seConnecter() {
         alert("Courriel ou mot de passe invalide!");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
