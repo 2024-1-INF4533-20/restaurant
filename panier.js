@@ -40,14 +40,17 @@ function displayPanier() {
                             <td>${prixT}$</td>
                             <td><button type="button"> - </button></td>
                             </tr>`;
-                            document.getElementById("panierContenu").innerHTML  += panierHTML;
+                            if(document.getElementById("panierContenu")){
+                                document.getElementById("panierContenu").innerHTML  += panierHTML;
+                            }
                             cp++;
                             prixTOTAL += prixT;
                         }
                     });
                 })
-                console.log("Le prix total de votre facture est de " + prixTOTAL);
-                document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTAL+"$";
+                if(document.getElementById("prixTotal")){
+                    document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTAL+"$";
+                }
             })
         }
     } else {
