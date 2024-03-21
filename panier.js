@@ -74,10 +74,16 @@ function ajouterAuPanier(itemId) {
 
 }
 function supprimer(itemId) {
-    panier.splice((itemId), 1);
+    if(panier.length>1){
+        panier.splice((itemId), 1);
     enregistrerPanier();
     console.log(panier)
     location.reload()
+    }
+    else{
+        supprimerToutPanier()
+    }
+    
 }
 
 function testAjoutTrigger(itemId) {
