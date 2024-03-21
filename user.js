@@ -1,14 +1,16 @@
-// let users = [];
 
-// fetch('datajson/user.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     users = data;
-//     console.log('Fetched data:', users);
-//   })
-//   .catch(error => {
-//     console.error('Error fetching users data:', error);
-//   });
+let usersData = [];
+
+fetch('datajson/user.json')
+    .then(response => response.json())
+    .then(data => {
+        usersData = data;
+        sessionStorage.setItem("usersData", JSON.stringify(usersData));
+        console.log('Loaded user data:', usersData);
+    })
+    .catch(error => {
+        console.error('Error loading user data:', error);
+    });
 
 // Fonction pour créer un compte utilisateur
 function createAccount() {
@@ -17,8 +19,6 @@ function createAccount() {
     const courriel = document.getElementById("registerCourriel").value;
     const motDePasse = document.getElementById("registerMotDePasse").value;
 
-    let usersData = JSON.parse(sessionStorage.getItem("usersData")) || [];
-
     // Vérifier si un utilisateur avec le même courriel existe déjà
     const existingUser = usersData.find(user => user.courriel === courriel);
     if (existingUser) {
@@ -26,6 +26,7 @@ function createAccount() {
         return;
     }
 
+    // Création d'un utilisateur
     const newUser = { nom, courriel, motDePasse };
 
     usersData.push(newUser);
@@ -40,12 +41,11 @@ function seConnecter() {
     const courriel = document.getElementById("courrielSignIn").value;
     const motDePasse = document.getElementById("motDePasseSignIn").value;
 
-    const usersData = JSON.parse(sessionStorage.getItem("usersData")) || [];
+    const usersData = JSON.parse(sessionStorage.getItem("usersData"));
 
     const user = usersData.find(user => user.courriel === courriel && user.motDePasse === motDePasse);
 
     if (user) {
-        sessionStorage.setItem("userCourriel", user.courriel);
         sessionStorage.setItem("userNom", user.nom);
 
         alert("Connexion réussie!");
