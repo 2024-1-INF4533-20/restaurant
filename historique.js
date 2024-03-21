@@ -2,36 +2,26 @@ const mesBoutons = document.querySelector('div.tab');
 const mesCommandes = document.querySelector('section.content');
 let historique = [];
 let HistoriqueJSON = [];
-let PremierLoad = -1;
 
 window.onload = onLoadTrigger();
 
 function onLoadTrigger() {
-  PremierLoad++;
-  clearHistory()
-  getHistoriqueJSON();
+  
+  displayHistorique();
 }
 
 
-function clearHistory() {
-  historique = [];
-  HistoriqueJSON = [];
-}
 
-function getHistoriqueJSON() {
   fetch('./datajson/historique.json')
     .then(res => res.json())
     .then(data => {
-      if(PremierLoad==0){
         console.log("premier log");
         HistoriqueJSON = data;
         HistoriqueJSON.forEach(e => {
         historique.push(e);
       });
-      } 
       enregistrerHistorique();
     });
-}
 
 function enregistrerHistorique() {
   sessionStorage.setItem("historique", JSON.stringify(historique));
