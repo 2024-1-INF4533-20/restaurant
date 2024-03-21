@@ -6,42 +6,77 @@ let panier = [];
 function displayPanier() {
     let currentPanier = sessionStorage.getItem("panier");
     if (currentPanier) {
-        if (currentPanier.length>0) {
-            currentPanier = JSON.parse(currentPanier);
-        console.log(currentPanier)
-        currentPanier.forEach(e => {
-            console.log(e.nom);
-        });
-        }else{
-            console.log("panier vide");
-        }
-        
+        let prixTOTAL = 0;
+        currentPanier = JSON.parse(currentPanier);
+        // console.log(currentPanier)
+        panier = currentPanier;
+        let panierHTML = "";
+        fetch('./datajson/menu.json')
+            .then(res => res.json())
+            .then(data => {
+                let menu = data;
+                menu.forEach(p => {
+                    let cp = 0;
+                    let qt = 0;
+                    let  prixT = 0;
+                    currentPanier.forEach(e => {
+                        //console.log(e.nom);
+                        if (p.id == e.id) {
+                            qt += 1;
+                            
+                            
+                            prixT += parseFloat(p.prix);
+                            
+                        }
+                    });
+                    cp = 1;
+                    currentPanier.forEach(e => {
+                        if (p.id == e.id && cp==1) {
+                            
+                            panierHTML += `<tr>
+            <th>${e.id}</th>
+            <td>${e.nom}</td>
+            <td> ${qt} </td>
+            <td>${prixT}$</td>
+            <td><button type="button"> - </button></td>
+          </tr>`;
+                            console.log(panierHTML);
+                            cp++;
+                            prixTOTAL += prixT;
+                        }
+                    });
+                })
+                console.log("Le prix total de votre facture est de " + prixTOTAL);
+            })
+           
     } else {
         console.log("panier vide");
     }
+
+
 }
 
-function ajouterAuPanier(itemId){
+function ajouterAuPanier(itemId) {
     fetch('./datajson/menu.json')
         .then(res => res.json())
-        .then(data =>{
-        let menu = data;
-        let monItem = menu.find( item => item.id == itemId)
-        panier.push(monItem);    
-        console.log("nouveau panier "+panier)
-        enregistrerPanier();    
-    
-    });
-      
+        .then(data => {
+            let menu = data;
+            let monItem = menu.find(item => item.id == itemId)
+            panier.push(monItem);
+            console.log("nouveau panier " + panier)
+            enregistrerPanier();
+
+        });
+
 }
 
-function testAjoutTrigger(itemId){
-    alert("test ajout de l'item "+itemId);
+function testAjoutTrigger(itemId) {
+    alert("test ajout de l'item " + itemId);
 }
 
-function enregistrerPanier(){
+function enregistrerPanier() {
     console.log("panier")
-    sessionStorage.setItem("panier",JSON.stringify(panier)); //pas sûr que j'enregistre comme du monde... :(
+    sessionStorage.setItem("panier", JSON.stringify(panier)); //pas sûr que j'enregistre comme du monde... :(
     displayPanier()
 }
 
@@ -105,7 +140,7 @@ function ajouterproduit(id){  //ajoute un user dans le fichier user.json en util
         produitTrouve = menu.find(produit => produit.id == monProduit);
         console.log(produitTrouve);
     })
-    
+
 
     fs.readFile("datajson/panier.json", (error, data) => {
         if(error){
@@ -117,7 +152,7 @@ function ajouterproduit(id){  //ajoute un user dans le fichier user.json en util
         sauvegarde(JSON.stringify(paniers), "datajson/panier.json");
         console.log(paniers);
     })
-    
+
 }
 */
- //test pour ajouter un user dans user.json
+//test pour ajouter un user dans user.json
