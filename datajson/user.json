@@ -1,4 +1,4 @@
 [
-    {"courriel": "alex@uqo.ca", "password": "1234"},
-    {"courriel": "admin@uqo.ca", "password": "admin"}
+    {"nom": "alex", "courriel": "alex@uqo.ca", "motDePasse": "1234"},
+    {"nom": "admin", "courriel": "admin@uqo.ca", "motDePasse": "admin"}
 ]
