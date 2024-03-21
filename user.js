@@ -1,114 +1,75 @@
-let users = [];
+// let users = [];
 
-fetch('datajson/user.json')
-  .then(response => response.json())
-  .then(data => {
-    users = data;
-    console.log('Fetched data:', users);
-  })
-  .catch(error => {
-    console.error('Error fetching users data:', error);
-  });
+// fetch('datajson/user.json')
+//   .then(response => response.json())
+//   .then(data => {
+//     users = data;
+//     console.log('Fetched data:', users);
+//   })
+//   .catch(error => {
+//     console.error('Error fetching users data:', error);
+//   });
 
-  function seConnecter() {
+
+function createAccount() {
+    const nom = document.getElementById("registerNom").value;
+    const courriel = document.getElementById("registerCourriel").value;
+    const motDePasse = document.getElementById("registerMotDePasse").value;
+
+    let usersData = JSON.parse(sessionStorage.getItem("usersData")) || [];
+
+    const existingUser = usersData.find(user => user.courriel === courriel);
+    if (existingUser) {
+        alert("Un compte avec cet email existe déjà.");
+        return;
+    }
+
+    const newUser = { nom, courriel, motDePasse };
+
+    usersData.push(newUser);
+
+    sessionStorage.setItem("usersData", JSON.stringify(usersData));
+
+    alert("Compte créé avec succès. Veuillez vous connecter maintenant.");
+    window.location.href = "connexion.html"; 
+}
+
+function seConnecter() {
     const courriel = document.getElementById("courrielSignIn").value;
     const motDePasse = document.getElementById("motDePasseSignIn").value;
 
+    const usersData = JSON.parse(sessionStorage.getItem("usersData")) || [];
 
-    const user = users.find(user => {
-        return (user.courriel === courriel || user.motDePasse === courriel) && user.password === motDePasse;
-    });
+    const user = usersData.find(user => user.courriel === courriel && user.motDePasse === motDePasse);
 
     if (user) {
-        alert("Connexion réussie!");
         sessionStorage.setItem("userCourriel", user.courriel);
-        window.location.href = "index.html";
+        sessionStorage.setItem("userNom", user.nom);
+
+        alert("Connexion réussie!");
+        window.location.href = "menu.html";
     } else {
         alert("Courriel ou mot de passe invalide!");
     }
 }
 
-function displayUserEmail() {
-    const userEmail = sessionStorage.getItem("userCourriel");
-    console.log("email reçu: "+userEmail);
-    if (userEmail) {
-        const connexionTab = document.getElementById("connexionTab");
-        const emailLink = document.createElement("a");
-        emailLink.textContent = userEmail;
-        emailLink.href = "#";
-        connexionTab.innerHTML = "";
-        connexionTab.appendChild(emailLink);
-    }
-}
-
-window.onload = displayUserEmail;
 
 
-function ajouteruser(){  //ajoute un user dans le fichier user.json en utilisant sauvegarde()
-    const nom = document.getElementById("RegisterNom").value;
-    console.log(nom);
-    const courriel = document.getElementById("RegisterCourriel").value;
-    const motDePasse = document.getElementById("RegistermotDePasse").value;
-   
-    
-
-    let user = JSON.parse('{"name":"'+nom+'", "courriel":"'+courriel+'", "motDePasse":"'+motDePasse+'"}')
 
 
-    fs.readFile("datajson/user.json", (error, data) => {
-        if(error){
-            console.error(error);
-            throw err;
-        }
-        let users = JSON.parse(data);
-        users.user.push(user);
-        sauvegarde(JSON.stringify(users), "datajson/user.json");
-        console.log(users);
-    })
 
 
-    function ajouteruser2(){
-        $.ajax({ 
-            url: 'user.json', 
-            type: 'POST', 
-            data: {user},
-            success: function(response) { 
-              console.log('Data added successfully!'); 
-            }, 
-            error: function(error) { 
-              console.log('Error: ' + error); 
-            } 
-          }); 
-    }
-
-    function saveJSONFile(filename, newUser,callback) {
-        fetch(filename)
-            .then(response => response.json())
-            .then(data => callback(data))
-            .catch(error => console.error('Error reading JSON file:', error));
-    }
-
-    ajouteruser();
 
 
-     // Function to fetch and parse JSON file
-     function readJSONFile(filename, callback) {
-        fetch(filename)
-            .then(response => response.json())
-            .then(data => callback(data))
-            .catch(error => console.error('Error reading JSON file:', error));
-    }
 
-    // Usage: Call the function with the file name and a callback to handle the data
-    readJSONFile('datajson/user.json', function(data) {
-        // Do something with the data
-        console.log(data);
 
-        // Example: Display the data in the HTML
-        document.getElementById('output').innerText = JSON.stringify(data, null, 2);
-    });
+
+
+
+
+
 
     
 
-}
+
 
