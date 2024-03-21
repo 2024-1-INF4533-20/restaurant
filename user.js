@@ -5,6 +5,7 @@ fetch('datajson/user.json')
     .then(data => {
         // Store loaded user data in the usersData array
         usersData = data;
+        sessionStorage.setItem("usersData", JSON.stringify(usersData));
         console.log('Loaded user data:', usersData);
     })
     .catch(error => {
