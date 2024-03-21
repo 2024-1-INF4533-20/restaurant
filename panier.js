@@ -1,25 +1,25 @@
 
-let panier = [];
+let panier = []; //panier pour enregistrer localement
 
 
 
-function displayPanier() {
+function displayPanier() { //affiche le panier dans la page panier.html
     let currentPanier = sessionStorage.getItem("panier");
     if (currentPanier) {
         if (currentPanier.length > 0) {
-            let prixTOTAL = 0;
+            let prixTOTAL = 0; //prix total de la commande
             currentPanier = JSON.parse(currentPanier);
             panier = currentPanier;
             let panierHTML = "";
-            fetch('./datajson/menu.json')
+            fetch('./datajson/menu.json') //va chercher les elements du menu dans menu.json
                 .then(res => res.json())
                 .then(data => {
                     let menu = data;
                     menu.forEach(p => {
-                        let cp = 0;
-                        let qt = 0;
-                        let prixT = 0;
-                        currentPanier.forEach(e => {
+                        let cp = 0; //compteur
+                        let qt = 0; //quantité d'un item ajouté
+                        let prixT = 0; //prix total pour x meme produit
+                        currentPanier.forEach(e => { //modifie la quantite d'un item pour éviter d'afficher x fois le meme item dans le panier
                             if (p.id == e.id) {
                                 qt += 1;
 
@@ -30,8 +30,8 @@ function displayPanier() {
 
 
                         cp = 1;
-                        let index = 0
-                        currentPanier.forEach(e => {
+                        let index = 0 //index pour enregistrer la position de e dans le tableau panier (utiliser dans supprimer())
+                        currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.html
                             if (p.id == e.id && cp == 1) {
                                 panierHTML = `<tr>
                             <td>${e.nom}</td>
@@ -73,12 +73,12 @@ function ajouterAuPanier(itemId) {
         });
 
 }
-function supprimer(itemId) {
+function supprimer(itemId) { //enleve un element du tableau quand on clique sur le bouton supprimer de l'item
     if(panier.length>1){
         panier.splice((itemId), 1);
-    enregistrerPanier();
-    console.log(panier)
-    location.reload()
+        enregistrerPanier();
+        console.log(panier)
+        location.reload()
     }
     else{
         supprimerToutPanier()
@@ -90,11 +90,11 @@ function testAjoutTrigger(itemId) {
     alert("test ajout de l'item " + itemId);
 }
 
-function enregistrerPanier() {
+function enregistrerPanier() { //enregistre le panier dans la variable locale de session
     sessionStorage.setItem("panier", JSON.stringify(panier));
 }
 
-function supprimerToutPanier() {
+function supprimerToutPanier() { //enleve tout les elements du panier
     panier = [];
     sessionStorage.setItem("panier", "");
     location.reload();
