@@ -1,12 +1,9 @@
-<<<<<<< Updated upstream
-// let users = [];
-=======
+
 let usersData = [];
 
 fetch('datajson/user.json')
     .then(response => response.json())
     .then(data => {
-        // Store loaded user data in the usersData array
         usersData = data;
         sessionStorage.setItem("usersData", JSON.stringify(usersData));
         console.log('Loaded user data:', usersData);
@@ -14,18 +11,6 @@ fetch('datajson/user.json')
     .catch(error => {
         console.error('Error loading user data:', error);
     });
-
->>>>>>> Stashed changes
-
-// fetch('datajson/user.json')
-//   .then(response => response.json())
-//   .then(data => {
-//     users = data;
-//     console.log('Fetched data:', users);
-//   })
-//   .catch(error => {
-//     console.error('Error fetching users data:', error);
-//   });
 
 // Fonction pour créer un compte utilisateur
 function createAccount() {
