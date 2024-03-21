@@ -6,20 +6,20 @@ window.onload = onLoadTrigger();
 
 function onLoadTrigger() {
 
-  if(historique){
+  if (historique) {
     displayHistorique();
   }
 }
 
 
-if(!historique){
+if (!historique) {
   fetch('./datajson/historique.json')
-  .then(res => res.json())
-  .then(data => {
-    //console.log(data);
-    historique = data;
-    enregistrerHistorique();
-  });
+    .then(res => res.json())
+    .then(data => {
+      //console.log(data);
+      historique = data;
+      enregistrerHistorique();
+    });
 }
 
 
@@ -31,7 +31,7 @@ function enregistrerHistorique() {
 function displayHistorique() {
   let currentHistorique = sessionStorage.getItem("historique");
   currentHistorique = JSON.parse(currentHistorique);
-  
+
 
   let bouttonHTML = "";
   let historiqueHTML = "";
@@ -72,5 +72,67 @@ function displayHistorique() {
 
 
 }
+
+function payer() {
+  let currentHistorique = sessionStorage.getItem("historique");
+  currentHistorique = JSON.parse(currentHistorique);
+  let numeroCommande = currentHistorique.length + 1;
+  let nom = document.getElementById("fname").value + " " + document.getElementById("lname").value
+
+  let commande = []
+  let prix = 1;
+  let currentPanier = sessionStorage.getItem("panier");
+  if (currentPanier) {
+    if (currentPanier.length > 0) {
+      currentPanier = JSON.parse(currentPanier);
+      panier = currentPanier;
+      fetch('./datajson/menu.json') //va chercher les elements du menu dans menu.json
+        .then(res => res.json())
+        .then(data => {
+          let menu = data;
+          menu.forEach(p => {
+            let cp = 0; //compteur
+            let qt = 0; //quantité d'un item ajouté
+            let prixT = 0; //prix total pour x meme produit
+            currentPanier.forEach(e => { //modifie la quantite d'un item pour éviter d'afficher x fois le meme item dans le panier
+              if (p.id == e.id) {
+                qt += 1;
+
+
+                prixT += parseFloat(p.prix);
+
+              }
+            });
+
+            cp = 1;
+           currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.html
+              if (p.id == e.id && cp == 1) {
+                commande.push({"id":e.id,"qte":qt})
+                console.log(prixT);
+                console.log(prix)
+                cp++;
+              }
+            });
+          })
+        })
+    }}
+
+
+    let date = new Date();
+    let adresse = document.getElementById("numporte").value + ", " + document.getElementById("ville").value
+
+    let MaCommande = {
+      "numeroCommande": numeroCommande,
+      "nom": nom,
+      "commande": commande,
+      "prix":prix,
+      "date": date,
+      "adresse": adresse
+    }
+    console.log(MaCommande);
+    //supprimerToutPanier()
+    //window.location.assign("./historique.html");
+
+  }
 
 

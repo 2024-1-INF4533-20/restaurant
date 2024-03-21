@@ -12,6 +12,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="commun.js"></script>
   <script type="text/javascript" src="panier.js"></script>
+  <script type="text/javascript" src="historique.js"></script>
 </head>
 
 <body onLoad='displayPanier()'>
@@ -79,10 +80,11 @@
             <label class="paiementlab" for="check2">Enregistrer l'adresse?</label><!--Checkbox pour enregistrer adresse pour une prochaine livraison-->
             <input type="checkbox" id="check2"><br><br>
           </div>
-          <input type="submit" id="payer" value="Payer" onclick="payer()">
+          <input type="submit" id="payer" value="Payer" ><!-- à faire fonctionner plus tard -->
         </div>
       </form>
       <br>
+      <input type="submit" id="cheat" value="Cheat Payer" onclick="payer()">
     </section>
   </div>
 
