@@ -40,14 +40,19 @@ function displayPanier() {
                             <td>${prixT}$</td>
                             <td><button type="button"> - </button></td>
                             </tr>`;
-                            document.getElementById("panierContenu").innerHTML  += panierHTML;
+                            if(document.getElementById("panierContenu")){
+                                document.getElementById("panierContenu").innerHTML  += panierHTML;
+                            }
                             cp++;
                             prixTOTAL += prixT;
                         }
                     });
                 })
-                console.log("Le prix total de votre facture est de " + prixTOTAL);
-                document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTAL+"$";
+                if(document.getElementById("prixTotal")){
+                    console.log("Le prix total de votre facture est de " + prixTOTAL);
+                    document.getElementById("prixTotal").innerHTML = "Le prix total de votre facture est de " + prixTOTAL+"$";
+                }
+                
             })
         }
     } else {
@@ -83,6 +88,27 @@ function supprimerToutPanier() {
     sessionStorage.setItem("panier", "");
     location.reload();
     displayPanier();
+}
+
+function payer(){
+    $('form > input').keyup(function() {
+
+        var empty = false;
+        $('form > input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('#payer').attr('disabled', 'disabled'); // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+        } else {
+            $('#payer').removeAttr('disabled'); 
+            // updated according to http://stackoverflow.com/questions/7637790/how-to-remove-disabled-attribute-with-jquery-ie
+            alert("payer");
+        }
+        
+    });
 }
 
 window.onload = displayPanier();
