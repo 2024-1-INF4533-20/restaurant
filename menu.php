@@ -87,7 +87,6 @@
             $compteur++;
           }
           echo "</tr>";
-          $dbh = NULL;
           ?>
         </table>
       </div>
@@ -99,51 +98,52 @@
         <h3 id="tablePates">Nos Pâtes</h3>
         <table class="table" id="tableMesPates">
 
-          <script>
-            const mesPates = document.querySelector('table#tableMesPates');
-            var compteurPa = 1;
-            fetch('./datajson/menu.json')
-              .then(res => res.json())
-              .then(data => {
-                let pates = data.filter(produit => produit.type == "Pates");
-                var row = mesPates.insertRow(0);
-                pates.forEach(p => {
-                  if (compteurPa > 4) {
+        <?php
+          include_once ("sql.php");
+          //La requête SQL
+          $sql = "SELECT * FROM menu WHERE Type = 'Pates'";
+          //Recherche des données
+          $sth = $dbh->query($sql);
+          // On voudrait les résultats sous la forme d’un tableau associatif
+          $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+          //Affichage des résultats
+          
+          $compteur = 1;
 
-                    compteurPa = 0;
-                    row = mesPates.insertRow(-1);
+          echo "<tr>";
+          foreach ($result as $row) {
+            if ($compteur > 4) {
 
-                  }
-                  var mycell = row.insertCell(-1);
-                  mycell.innerHTML = `
-                  <td>
-                    <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                      <img class="card-img-top" src="${p.image}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">${p.nom}</h5>
-                        <p class="card-text">${p.ingredients}</p>
-                        <table>
-                          <tr>
-                            <td>
-                              <a href="#" class="btn " onClick="ajouterAuPanier(${p.id});">Ajouter au panier</a>
-                            </td>
-                            <td>
-                              <div class="hide">
-                                <p class="prix-item">${p.prix}</p>
-                              </div>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </td>                      
-                  `;
-                  compteurPa++;
-                }
+              $compteur = 0;
+              echo "</tr><tr>";
 
-                );
-              })
-          </script>
+            }
+            echo "<td>
+    <div class='card shadow p-3 mx-auto btnShow' style='width: 18rem;'>
+      <img class='card-img-top' src='" . $row['Image'] . "' alt='Card image cap'>
+      <div class='card-body'>
+        <h5 class='card-title'>" . $row['Nom'] . "</h5>
+        <p class='card-text'>" . $row['Ingredients'] . "</p>
+        <table>
+          <tr>
+            <td>
+              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+            </td>
+            <td>
+              <div class='hide'>
+                <p class='prix-item'>" . $row['Prix'] . "$</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </td>
+  ";
+            $compteur++;
+          }
+          echo "</tr>";
+          ?>
 
         </table>
 
@@ -157,51 +157,53 @@
         <h3 id="tableBreuvages">Nos Breuvages</h3>
         <table class="table" id="tableMesBreuvages">
 
-          <script>
-            const mesBreuvages = document.querySelector('table#tableMesBreuvages');
-            var compteurBa = 1;
-            fetch('./datajson/menu.json')
-              .then(res => res.json())
-              .then(data => {
-                let breuvages = data.filter(produit => produit.type == "Breuvages");
-                var row = mesBreuvages.insertRow(0);
-                breuvages.forEach(b => {
-                  if (compteurBa > 4) {
+        <?php
+          include_once ("sql.php");
+          //La requête SQL
+          $sql = "SELECT * FROM menu WHERE Type = 'Breuvages'";
+          //Recherche des données
+          $sth = $dbh->query($sql);
+          // On voudrait les résultats sous la forme d’un tableau associatif
+          $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+          //Affichage des résultats
+          
+          $compteur = 1;
 
-                    compteurBa = 0;
-                    row = mesBreuvages.insertRow(-1);
+          echo "<tr>";
+          foreach ($result as $row) {
+            if ($compteur > 4) {
 
-                  }
-                  var mycell = row.insertCell(-1);
-                  mycell.innerHTML = `
-                  <td>
-                    <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                      <img class="card-img-top" src="${b.image}" alt="Card image cap">
-                      <div class="card-body">
-                        <h5 class="card-title">${b.nom}</h5>
-                        <p class="card-text">${b.ingredients}</p>
-                        <table>
-                          <tr>
-                            <td>
-                              <a href="#" class="btn" onClick="ajouterAuPanier(${b.id});">Ajouter au panier</a>
-                            </td>
-                            <td>
-                              <div class="hide">
-                                <p class="prix-item">${b.prix}</p>
-                              </div>
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </td>                      
-                  `;
-                  compteurBa++;
-                }
+              $compteur = 0;
+              echo "</tr><tr>";
 
-                );
-              })
-          </script>
+            }
+            echo "<td>
+    <div class='card shadow p-3 mx-auto btnShow' style='width: 18rem;'>
+      <img class='card-img-top' src='" . $row['Image'] . "' alt='Card image cap'>
+      <div class='card-body'>
+        <h5 class='card-title'>" . $row['Nom'] . "</h5>
+        <p class='card-text'>" . $row['Ingredients'] . "</p>
+        <table>
+          <tr>
+            <td>
+              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+            </td>
+            <td>
+              <div class='hide'>
+                <p class='prix-item'>" . $row['Prix'] . "$</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </td>
+  ";
+            $compteur++;
+          }
+          echo "</tr>";
+          $dbh=null;
+          ?>
         </table>
       </div>
 
