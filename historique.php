@@ -11,7 +11,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="CSS/styleshistoriques.css">
   <script src="commun.js"></script>
-  <!--script type="text/javascript" src="historique.js"></script-->
+
 
 </head>
 
