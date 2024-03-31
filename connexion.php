@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="CSS/styleConnection.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="user.js"></script><!--script qui permet d'utiliser le code javascrypt de connection-->
-    <script src="commun.js"></script>
+    <script src="user.js"></script>
 </head>
 
 <body>
@@ -68,9 +67,7 @@
             </div>
         </div>
 
-        <script type="module" src="connection.js"></script><!--script qui permet d'utiliser le code javascrypt de connection-->
         <footer>
-
             <ul class="bottomnav">
                 <li><a href="">Commentaires</a></li>
                 <li><a href="contact.php">À propos de nous</a></li>
@@ -78,6 +75,8 @@
                 <li><a href="#top">Haut de la page</a></li>
             </ul>
         </footer>
+    </div>
+    <script type="module" src="connection.js"></script><!--script qui permet d'utiliser le code javascrypt de connection-->
 </body>
 
 </html>
