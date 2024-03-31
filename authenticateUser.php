@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include_once 'connexion-BD.php';
 
 $data = json_decode(file_get_contents("php://input"));
@@ -12,6 +14,7 @@ if (isset($data->Courriel) && isset($data->MotDePasse)) {
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($user) {
+            $_SESSION['userNom'] = $user['Nom'];
             $response = [
                 'authenticated' => true,
                 'message' => 'User authenticated successfully.'

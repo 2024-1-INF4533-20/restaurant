@@ -85,3 +85,36 @@ function seConnecter() {
         alert("Une erreur est survenue lors de l'authentification.");
     });
 }
+
+
+function createAccount() {
+    const firstName = document.getElementById("registerNom").value;
+    const lastName = ""; 
+    const email = document.getElementById("registerCourriel").value;
+    const password = document.getElementById("registerMotDePasse").value;
+
+    fetch('createAccount.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ firstName: firstName, lastName: lastName, email: email, password: password })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => {
+        if (data === "success") {
+            alert("Account created successfully!");
+        } else {
+            alert("Failed to create account. Please try again later.");
+        }
+    })
+    .catch(error => {
+        console.error('Error creating user account:', error);
+        alert("An error occurred while creating the account.");
+    });
+}

@@ -25,9 +25,26 @@
       <li class="libr"><a href="historique.php">Historique de commande</a></li>
       <li class="libr"><a href="panier.php">Mon panier</a></li>
       <li class="libr"><a href="paiement.php">Paiement</a></li>
-      <li class="libr" id="connexionTab"><a href="connexion.php">Connexion</a></li>
-      <li id="userDisplayName" style="display: none;"></li>
-  </ul>
+      <?php
+        // Start the session
+        session_start();
+
+        // Check if the user's name is set in the session
+        if (isset($_SESSION['userNom'])) {
+            // Display the user's name if logged in
+            echo "<li id='userDisplayName'>Bienvenue, " . $_SESSION['userNom'] . "!</li>";
+            // Hide the "Connexion" tab if the user is logged in
+            echo "<script>document.getElementById('connexionTab').style.display = 'none';</script>";
+            // Display the "Se déconnecter" (Logout) button
+            echo "<li class='libr' id='logoutBtn'><a href='logout.php'>Se déconnecter</a></li>";
+        } else {
+            // Show the "Connexion" tab if the user is not logged in
+            echo "<li class='libr' id='connexionTab'><a href='connexion.php'>Connexion</a></li>";
+            // Hide the user's name if the user is not logged in
+            echo "<script>document.getElementById('userDisplayName').style.display = 'none';</script>";
+        }
+      ?>
+    </ul>
   </header>
   
 
