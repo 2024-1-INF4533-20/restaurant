@@ -76,7 +76,7 @@ session_start();
         <table>
           <tr>
             <td>
-              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+              <a   class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
             </td>
             <td>
               <div class='hide'>
@@ -134,7 +134,7 @@ session_start();
         <table>
           <tr>
             <td>
-              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+              <a   class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
             </td>
             <td>
               <div class='hide'>
@@ -193,7 +193,7 @@ session_start();
         <table>
           <tr>
             <td>
-              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+              <a class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
             </td>
             <td>
               <div class='hide'>
