@@ -53,35 +53,35 @@
 //     }
 // }
 
+// Function to sign in
 function seConnecter() {
     const courriel = document.getElementById("courrielSignIn").value;
     const motDePasse = document.getElementById("motDePasseSignIn").value;
-
-    const userData = { Courriel: courriel, MotDePasse: motDePasse };
 
     fetch('authenticateUser.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(userData)
+        body: JSON.stringify({ Courriel: courriel, MotDePasse: motDePasse })
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('erreur');
+            throw new Error('Network response was not ok');
         }
         return response.json();
     })
     .then(data => {
+        console.log('Response from server:', data);
         if (data.authenticated) {
+            alert("Connexion réussie!");
             window.location.href = "menu.php";
         } else {
-            alert("mdp ou courriel invalide");
+            alert("Courriel ou mot de passe invalide!");
         }
     })
     .catch(error => {
-        console.error('Error authentication du user:', error);
-        alert("erreur authentication");
+        console.error('Error authenticating user:', error);
+        alert("Une erreur est survenue lors de l'authentification.");
     });
 }
-

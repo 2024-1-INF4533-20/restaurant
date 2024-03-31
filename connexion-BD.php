@@ -5,11 +5,10 @@ $username = 'root';
 $password = ''; 
 
 try {
-    // Create a PDO instance
     $dbh = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $testUser = 'alex@uqo.ca'; 
+    $testUser = 'alex@uqo.ca';
     $stmt = $dbh->prepare("SELECT * FROM user WHERE Courriel = :courriel");
     $stmt->bindParam(':courriel', $testUser);
     $stmt->execute();
@@ -21,6 +20,6 @@ try {
     }
 } catch (PDOException $e) {
     error_log("Connection failed: " . $e->getMessage());
-    exit("Connection failed");
+    exit("Connection failed. Please try again later.");
 }
 ?>
