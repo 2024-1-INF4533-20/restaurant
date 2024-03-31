@@ -13,6 +13,7 @@ function onLoadTrigger() {
 
 
 if (!historique) {
+  
   fetch('./datajson/historique.json')
     .then(res => res.json())
     .then(data => {
