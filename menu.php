@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="CSS/stylesMenu.css"> <!-- feuille de style css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+
   <!-- bootstrap (notre sauveur) -->
   <script type="text/javascript" src="panier.js"></script>
   <script src="commun.js"></script>
@@ -28,7 +28,7 @@
       <li class="libr"><a href="panier.php">Mon panier</a></li>
       <li class="libr" id="connexionTab"><a href="connexion.php">Connexion</a></li>
       <li id="userDisplayName" style="display: none;"></li>
-  </ul>
+    </ul>
   </header>
 
   <div class="background">
@@ -42,52 +42,53 @@
       <div class="col-auto">
         <h3 id="tablePizza">Nos Pizzas</h3>
         <table class="table" id="tableMesPizza">
-        <script>
-                const mesPizza = document.querySelector('table#tableMesPizza');
-                var compteur = 1;
-                fetch('./datajson/menu.json')
-                  .then(res => res.json())
-                  .then(data =>{
-                    let pizzas = data.filter(produit => produit.type == "Pizza");
-                    var row = mesPizza.insertRow(0);
-                    pizzas.forEach(p => {
-                      if(compteur>4)
-                      {
-                        
-                        compteur = 0;
-                        row = mesPizza.insertRow(-1);
-                        
-                      } 
-                        var mycell = row.insertCell(-1);
-                        mycell.innerHTML =`
-                      <td>
-                        <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
-                          <img class="card-img-top" src="${p.image}" alt="Card image cap">
-                          <div class="card-body">
-                            <h5 class="card-title">${p.nom}</h5>
-                            <p class="card-text">${p.ingredients}</p>
-                            <table>
-                              <tr>
-                                <td>
-                                  <a href="#" class="btn" onClick="ajouterAuPanier(${p.id});" >Ajouter au panier</a>
-                                </td>
-                                <td>
-                                  <div class="hide">
-                                    <p class="prix-item">${p.prix}$</p>
-                                  </div>
-                                </td>
-                              </tr>
-                            </table>
-                          </div>
-                        </div>
-                      </td>                      
-                      `;
-                      compteur++;
-                      }
-                      
-                    );
-                  })
-              </script>
+          <?php
+          include_once ("sql.php");
+          //La requête SQL
+          $sql = "SELECT * FROM menu WHERE Type = 'Pizza'";
+          //Recherche des données
+          $sth = $dbh->query($sql);
+          // On voudrait les résultats sous la forme d’un tableau associatif
+          $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+          //Affichage des résultats
+          
+          $compteur = 1;
+
+          echo "<tr>";
+          foreach ($result as $row) {
+            if ($compteur > 4) {
+
+              $compteur = 0;
+              echo "</tr><tr>";
+
+            }
+            echo "<td>
+    <div class='card shadow p-3 mx-auto btnShow' style='width: 18rem;'>
+      <img class='card-img-top' src='" . $row['Image'] . "' alt='Card image cap'>
+      <div class='card-body'>
+        <h5 class='card-title'>" . $row['Nom'] . "</h5>
+        <p class='card-text'>" . $row['Ingredients'] . "</p>
+        <table>
+          <tr>
+            <td>
+              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+            </td>
+            <td>
+              <div class='hide'>
+                <p class='prix-item'>" . $row['Prix'] . "$</p>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </td>
+  ";
+            $compteur++;
+          }
+          echo "</tr>";
+          $dbh = NULL;
+          ?>
         </table>
       </div>
     </section>
@@ -103,19 +104,18 @@
             var compteurPa = 1;
             fetch('./datajson/menu.json')
               .then(res => res.json())
-              .then(data =>{
+              .then(data => {
                 let pates = data.filter(produit => produit.type == "Pates");
                 var row = mesPates.insertRow(0);
                 pates.forEach(p => {
-                  if(compteurPa>4)
-                  {
-                    
+                  if (compteurPa > 4) {
+
                     compteurPa = 0;
                     row = mesPates.insertRow(-1);
-                    
-                  } 
-                    var mycell = row.insertCell(-1);
-                    mycell.innerHTML =`
+
+                  }
+                  var mycell = row.insertCell(-1);
+                  mycell.innerHTML = `
                   <td>
                     <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
                       <img class="card-img-top" src="${p.image}" alt="Card image cap">
@@ -139,12 +139,12 @@
                   </td>                      
                   `;
                   compteurPa++;
-                  }
-                  
+                }
+
                 );
               })
           </script>
-          
+
         </table>
 
       </div>
@@ -162,19 +162,18 @@
             var compteurBa = 1;
             fetch('./datajson/menu.json')
               .then(res => res.json())
-              .then(data =>{
+              .then(data => {
                 let breuvages = data.filter(produit => produit.type == "Breuvages");
                 var row = mesBreuvages.insertRow(0);
                 breuvages.forEach(b => {
-                  if(compteurBa>4)
-                  {
-                    
+                  if (compteurBa > 4) {
+
                     compteurBa = 0;
                     row = mesBreuvages.insertRow(-1);
-                    
-                  } 
-                    var mycell = row.insertCell(-1);
-                    mycell.innerHTML =`
+
+                  }
+                  var mycell = row.insertCell(-1);
+                  mycell.innerHTML = `
                   <td>
                     <div class="card shadow p-3 mx-auto btnShow" style="width: 18rem;">
                       <img class="card-img-top" src="${b.image}" alt="Card image cap">
@@ -198,8 +197,8 @@
                   </td>                      
                   `;
                   compteurBa++;
-                  }
-                  
+                }
+
                 );
               })
           </script>
@@ -218,7 +217,7 @@
       <li><a href="#top">Haut de la page</a></li>
     </ul>
   </footer>
-  
+
 
 
 </body>
