@@ -32,7 +32,7 @@ function createAccount() {
     sessionStorage.setItem("usersData", JSON.stringify(usersData));
 
     alert("Compte créé avec succès. Veuillez vous connecter maintenant.");
-    window.location.href = "connexion.html"; 
+    window.location.href = "connexion.php"; 
 }
 
 function seConnecter() {
@@ -47,7 +47,7 @@ function seConnecter() {
         sessionStorage.setItem("userNom", user.nom);
 
         alert("Connexion réussie!");
-        window.location.href = "menu.html";
+        window.location.href = "menu.php";
     } else {
         alert("Courriel ou mot de passe invalide!");
     }

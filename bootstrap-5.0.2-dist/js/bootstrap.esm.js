@@ -2091,7 +2091,7 @@ class Dropdown extends BaseComponent {
     } // If this is a touch-enabled device we add extra
     // empty mouseover listeners to the body's immediate children;
     // only needed because of broken event delegation on iOS
-    // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+    // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.php
 
 
     if ('ontouchstart' in document.documentElement && !parent.closest(SELECTOR_NAVBAR_NAV)) {
@@ -3693,7 +3693,7 @@ class Tooltip extends BaseComponent {
     } // If this is a touch-enabled device we add extra
     // empty mouseover listeners to the body's immediate children;
     // only needed because of broken event delegation on iOS
-    // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+    // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.php
 
 
     if ('ontouchstart' in document.documentElement) {
@@ -3805,7 +3805,7 @@ class Tooltip extends BaseComponent {
     if (isElement(content)) {
       content = getElement(content); // content is a DOM node or a jQuery
 
-      if (this._config.html) {
+      if (this._config.php) {
         if (content.parentNode !== element) {
           element.innerHTML = '';
           element.appendChild(content);
@@ -3817,7 +3817,7 @@ class Tooltip extends BaseComponent {
       return;
     }
 
-    if (this._config.html) {
+    if (this._config.php) {
       if (this._config.sanitize) {
         content = sanitizeHtml(content, this._config.allowList, this._config.sanitizeFn);
       }

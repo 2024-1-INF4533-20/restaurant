@@ -102,7 +102,7 @@ function payer() {
 
             
             cp = 1;
-            currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.html
+            currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.php
               if (p.id == e.id && cp == 1) {
                 commande.push({ "id": e.id, "qte": qt })
                 prixTOTAL += prixT;
@@ -130,7 +130,7 @@ function payer() {
           historique.push(MaCommande);
           enregistrerHistorique();
           supprimerToutPanier();
-          window.location.assign("./historique.html"); //envoie le user vers la page historique
+          window.location.assign("./historique.php"); //envoie le user vers la page historique
         })
     }
   }

@@ -19,13 +19,13 @@
   <header> <!--Barre de naviguation-->
     <ul class="topnav">
       <li><img src="Images/logo.png" width="200" alt="logo" id="logoImg"></li>
-      <li class="libr"><a href="menu.html">Pizza Info</a></li>
-      <li class="libr"><a href="menu.html">Menu </a></li>
-      <li class="libr"><a href="contact.html">Informations</a></li>
-      <li class="libr"><a href="historique.html">Historique de commande</a></li>
-      <li class="libr"><a href="panier.html">Mon panier</a></li>
-      <li class="libr"><a href="paiement.html">Paiement</a></li>
-      <li class="libr" id="connexionTab"><a href="connexion.html">Connexion</a></li>
+      <li class="libr"><a href="menu.php">Pizza Info</a></li>
+      <li class="libr"><a href="menu.php">Menu </a></li>
+      <li class="libr"><a href="contact.php">Informations</a></li>
+      <li class="libr"><a href="historique.php">Historique de commande</a></li>
+      <li class="libr"><a href="panier.php">Mon panier</a></li>
+      <li class="libr"><a href="paiement.php">Paiement</a></li>
+      <li class="libr" id="connexionTab"><a href="connexion.php">Connexion</a></li>
       <li id="userDisplayName" style="display: none;"></li>
   </ul>
   </header>
@@ -55,7 +55,7 @@
       <button type="button" onclick="supprimerToutPanier()">Supprimer tout mon panier</button> <!--Bouton qui permet de supprimer toute la commande-->
 
       <!--bouton paiement-->
-      <a href="paiement.html" class="btn" id="btnPanier">Payer ma commande</a>
+      <a href="paiement.php" class="btn" id="btnPanier">Payer ma commande</a>
 
     </section>
   </div>
@@ -64,7 +64,7 @@
 
     <ul class="bottomnav">
       <li><a href="">Commentaires</a></li>
-      <li><a href="contact.html">À propos de nous</a></li>
+      <li><a href="contact.php">À propos de nous</a></li>
       <li><a><img src="Images/logo-facebook.png" width="80" alt="facebook"></a></li>
       <li><a href="#top">Haut de la page</a></li>
     </ul>

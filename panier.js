@@ -3,7 +3,7 @@ let panier = []; //panier pour enregistrer localement
 
 
 
-function displayPanier() { //affiche le panier dans la page panier.html
+function displayPanier() { //affiche le panier dans la page panier.php
     let currentPanier = sessionStorage.getItem("panier");
     if (currentPanier) {
         if (currentPanier.length > 0) {
@@ -31,7 +31,7 @@ function displayPanier() { //affiche le panier dans la page panier.html
 
                         cp = 1;
                         let index = 0 //index pour enregistrer la position de e dans le tableau panier (utiliser dans supprimer())
-                        currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.html
+                        currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.php
                             if (p.id == e.id && cp == 1) {
                                 panierHTML = `<tr>
                             <td>${e.nom}</td>

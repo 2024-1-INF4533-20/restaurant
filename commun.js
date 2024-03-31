@@ -17,7 +17,7 @@ function logout() {
     sessionStorage.removeItem("userCourriel");
     sessionStorage.removeItem("userNom");
 
-    window.location.href = "connexion.html";
+    window.location.href = "connexion.php";
 }
 
 window.onload = function() {
