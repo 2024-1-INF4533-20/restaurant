@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="CSS/styleshistoriques.css">
   <script src="commun.js"></script>
-  <script type="text/javascript" src="historique.js"></script>
+
 
 </head>
 
@@ -25,7 +26,7 @@
       <li class="libr"><a href="panier.php">Mon panier</a></li>
       <li class="libr" id="connexionTab"><a href="connexion.php">Connexion</a></li>
       <li id="userDisplayName" style="display: none;"></li>
-  </ul>
+    </ul>
   </header>
 
   <div class="background backcomplet">
@@ -35,18 +36,71 @@
           <td style="width: 30%; margin-left: 150px;">
             <div class="tab">
               <!--bouttons sur le côté-->
+              <?php
+              include_once ("sql.php");
+              //La requête SQL
+              $sql = "SELECT * FROM historique";
+              //Recherche des données
+              $sth = $dbh->query($sql);
+              // On voudrait les résultats sous la forme d’un tableau associatif
+              $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+              //Affichage des résultats
+              foreach ($result as $row) {
+                echo "<button class='tablinks' onclick='commandee(event, ". $row['Id'] .")'>Commande ". $row['Id'] ."</button>";
+              }
+              ?>
             </div>
           </td>
 
           <td>
             <section class="content">
               <!--infos des commandes-->
+              <?php
+              include_once ("sql.php");
+              //La requête SQL
+              $sql = "SELECT * FROM historique";
+              //Recherche des données
+              $sth = $dbh->query($sql);
+              // On voudrait les résultats sous la forme d’un tableau associatif
+              $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+              //Affichage des résultats
+              foreach ($result as $row) {
+                $mesItems = "";
+                $commande = json_decode($row['Commande'],true);
+                foreach ($commande as $item) {
+                  $sqlItem = "SELECT Nom FROM menu WHERE Id = '".$item['id']."'";
+                  $sthItem = $dbh->query($sqlItem);
+                  $resultItem = $sthItem->fetchAll(PDO::FETCH_ASSOC);
+                  foreach ($resultItem as $rItem) {
+                    $mesItems .= $rItem['Nom'] . " x" . $item['qte'] . ", <br>";
+                  }
+                }
+
+                echo "<div id='" . $row['Id'] . "' class='tabcontent'><h3>Commande " . $row['Id'] . "</h3>
+            <p>Commande au nom de " . $row['Nom_User'] . "
+            <br>
+            " . $mesItems . "
+            Prix total de la commande (taxes incluses) : " . $row['Prix'] . "
+            <br>" . $row['Date'] . "
+            <br> Adresse : " . $row['Adresse'] . "
+            </p>
+            </div>";
+              }
+              $dbh = null;
+              ?>
+              <script>
+                //ceci rend les commandes invisibles jusqu'à ce qu'une commande soit sélectionnée
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                  tabcontent[i].style.display = "none";
+                }
+              </script>
             </section>
           </td>
         </tr>
       </table>
-      
-      
+
+
 
       <script> /*Fonction qui permet d'afficher toutes les commandes et d'afficher la description d'une seule commande à la fois */
         function commandee(evt, commandenom) {
@@ -78,6 +132,8 @@
     </ul>
   </footer>
   <script src="commun.js"></script>
+
+
 
 </body>
 

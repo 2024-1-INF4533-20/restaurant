@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,8 +16,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <script type="text/javascript" src="panier.js"></script>
   <!-- bootstrap (notre sauveur) -->
-  <script type="text/javascript" src="panier.js"></script>
   <script src="commun.js"></script>
 </head>
 
@@ -71,7 +76,7 @@
         <table>
           <tr>
             <td>
-              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+              <a   class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
             </td>
             <td>
               <div class='hide'>
@@ -87,6 +92,8 @@
             $compteur++;
           }
           echo "</tr>";
+                 
+
           ?>
         </table>
       </div>
@@ -127,7 +134,7 @@
         <table>
           <tr>
             <td>
-              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+              <a   class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
             </td>
             <td>
               <div class='hide'>
@@ -186,7 +193,7 @@
         <table>
           <tr>
             <td>
-              <a href='#' class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
+              <a class='btn' onClick='ajouterAuPanier(".$row['Id'].");'>Ajouter au panier</a>
             </td>
             <td>
               <div class='hide'>
@@ -219,7 +226,7 @@
       <li><a href="#top">Haut de la page</a></li>
     </ul>
   </footer>
-
+  
 
 
 </body>
