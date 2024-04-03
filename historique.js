@@ -109,6 +109,9 @@ function payer() {
                 prixTOTAL += prixT;
                 cp++;
               }
+
+
+
             });
           })
           let currentHistorique = sessionStorage.getItem("historique");
@@ -127,6 +130,50 @@ function payer() {
             "date": date,
             "adresse": adresse
           }
+
+          
+
+          let user = {
+
+            "id": numeroCommande,
+
+            "nom" : nom,
+
+            "commande":commande,
+
+            "prix": prix,
+
+            "date": date,
+
+            "adresse" : adresse
+
+        }
+
+        fetch("pratiquet.php", {
+
+            "method": "POST",
+        
+            "headers": {
+                "Content-Type": "application/json; charsert=utf-8"
+        
+            },
+        
+        "body": JSON.stringify(user)
+        
+        }).then(function(response){
+        
+            return response.json();
+        
+        }).then(function(data){
+        
+            console.log(data); // pas de besoin
+        
+            /*console.log(data.username);
+            console.log(data.password);
+            console.log(data.gender);
+            console.log(data.email);*/
+        
+        })
           console.log(MaCommande);
           historique.push(MaCommande);
           enregistrerHistorique();

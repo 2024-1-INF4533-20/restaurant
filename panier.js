@@ -46,6 +46,9 @@ function displayPanier() { //affiche le panier dans la page panier.php
                                 prixTOTAL += prixT;
                             }
                             index++;
+
+                           
+
                         });
                     })
                     if (document.getElementById("prixTotal")) {
