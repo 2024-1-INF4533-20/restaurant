@@ -24,20 +24,34 @@ function payer() {
       currentPanier = JSON.parse(currentPanier);
       panier = currentPanier;
       fetch('./datajson/menu.json') //va chercher les elements du menu dans menu.json
-        .then(res => res.json())
+        /*
+      'getMenuBD.php',{
+                "method":"GET", 
+                "headers":{"Content-Type":"application/json; charset=utf-8"}
+            }
+      */
+      .then(res => res.json())
+
+      /*
+      function (res) {
+                    return res.json()
+                }
+      */ 
         .then(data => {
+
+          //function(data)
           let menu = data;
           menu.forEach(p => {
             let cp = 0; //compteur
             let qt = 0; //quantité d'un item ajouté
             let prixT = 0; //prix total pour x meme produit
             currentPanier.forEach(e => { //modifie la quantite d'un item pour éviter d'afficher x fois le meme item dans le panier
-              if ((p.id == e.Id || p.id==e.id)) {
+              if ((p.Id == e.Id || p.id == e.Id || p.id==e.id)) {
                 qt += 1;
 
 
                 prixT += parseFloat(p.prix);
-
+               // prixT += parseFloat(p.Prix);
               }
             });
 

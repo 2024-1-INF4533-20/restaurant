@@ -16,6 +16,7 @@ if(isset($_GET)){
     $dbh=NULL;
 
     echo json_encode($result);
+    
 }
 
 ?>
