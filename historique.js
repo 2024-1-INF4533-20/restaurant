@@ -63,7 +63,7 @@ function payer() {
           }
 
           //appelle un script php qui met le panier dans la table historique de la BD
-        fetch("pratiquet.php", {
+        fetch("panierToBD.php", {
 
             "method": "POST",
         
