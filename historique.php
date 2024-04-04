@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="CSS/styleshistoriques.css">
   <script src="commun.js"></script>
 
-
 </head>
 
 <body>
@@ -51,7 +50,7 @@
       <table id="monHistorique">
         <tr>
           <td style="width: 30%; margin-left: 150px;">
-            <div class="tab">
+            <div class="tab" style="overflow-y:auto; max-height: 300px;">
               <!--bouttons sur le côté-->
               <?php
               include_once ("sql.php");
@@ -69,7 +68,7 @@
             </div>
           </td>
 
-          <td>
+          <td style="overflow-y:auto; max-height: 300px;">
             <section class="content">
               <!--infos des commandes-->
               <?php

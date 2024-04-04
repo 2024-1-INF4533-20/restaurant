@@ -101,7 +101,6 @@ function supprimerToutPanier() { //enleve tout les elements du panier
     panier = [];
     sessionStorage.removeItem("panier");
     location.reload();
-    displayPanier();
 }
 
 

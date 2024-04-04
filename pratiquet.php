@@ -9,7 +9,6 @@ if(isset($_POST)){
     
 
    
-    $id=$user["id"];
     $nom=$user["nom"];
     $commande=$user["commande"];
     $prix=$user["prix"];
@@ -21,7 +20,7 @@ if(isset($_POST)){
     //inscrire les données dans la base de données
 
 
-    $sql = "INSERT INTO historique (Id,Nom_User,Commande,Prix,Date,Adresse) VALUES ('$id','$nom','$commande','$prix', '$date', '$adresse')";
+    $sql = "INSERT INTO historique (Id,Nom_User,Commande,Prix,Date,Adresse) VALUES (NULL,'$nom','$commande','$prix', '$date', '$adresse')";
 
 
     $dbh->exec($sql);
