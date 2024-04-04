@@ -11,20 +11,26 @@ function displayPanier() { //affiche le panier dans la page panier.php
             currentPanier = JSON.parse(currentPanier);
             panier = currentPanier;
             let panierHTML = "";
-            fetch('./datajson/menu.json') //va chercher les elements du menu dans menu.json
-                .then(res => res.json())
-                .then(data => {
+            fetch('getMenuBD.php',{
+                "method":"GET", 
+                "headers":{"Content-Type":"application/json; charset=utf-8"}
+            }) //va chercher les elements du menu dans menu.json
+                .then(function (res) {
+                    return res.json()
+                })
+                .then(function(data){
                     let menu = data;
                     menu.forEach(p => {
+                        
                         let cp = 0; //compteur
                         let qt = 0; //quantité d'un item ajouté
                         let prixT = 0; //prix total pour x meme produit
                         currentPanier.forEach(e => { //modifie la quantite d'un item pour éviter d'afficher x fois le meme item dans le panier
-                            if (p.id == e.id) {
+                           
+                            if (p.Id == e.id) {
                                 qt += 1;
-
-
-                                prixT += parseFloat(p.prix);
+                                prixT += parseFloat(p.Prix);
+                            } else {
                             }
                         });
 
@@ -32,7 +38,7 @@ function displayPanier() { //affiche le panier dans la page panier.php
                         cp = 1;
                         let index = 0 //index pour enregistrer la position de e dans le tableau panier (utiliser dans supprimer())
                         currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.php
-                            if (p.id == e.id && cp == 1) {
+                            if (p.Id == e.id && cp == 1) {
                                 panierHTML = `<tr>
                             <td>${e.nom}</td>
                             <td> ${qt} </td>
