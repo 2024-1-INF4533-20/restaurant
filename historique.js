@@ -1,7 +1,16 @@
 
+window.onload = onLoadTrigger();
+
+function onLoadTrigger() {
+
+    displayHistorique();
+}
+
 function displayHistorique() {
   
   //la page historique ne se refresh pas si on appelle pas cette fonction là... étrange mais ça fonctionne, alors on laisse ça comme tel
+  
+  document.querySelector('section').innerHTML = "";
     console.log("je refresh des choses wow!");
 }
 
