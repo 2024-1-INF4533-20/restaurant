@@ -90,7 +90,7 @@ function payer() {
         })
           supprimerToutPanier();
           displayHistorique(); //refresh "magiquement" la page historique
-          window.location.assign("./historique.php"); //envoie le user vers la page historique
+          window.location.assign("./menu.php"); //envoie le user vers la page menu
         })
     }
   }
