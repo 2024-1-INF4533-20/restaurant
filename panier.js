@@ -14,7 +14,7 @@ function displayPanier() { //affiche le panier dans la page panier.php
             fetch('getMenuBD.php',{
                 "method":"GET", 
                 "headers":{"Content-Type":"application/json; charset=utf-8"}
-            }) //va chercher les elements du menu dans menu.json
+            }) //va chercher les elements du menu dans la BD
                 .then(function (res) {
                     return res.json()
                 })
@@ -27,7 +27,7 @@ function displayPanier() { //affiche le panier dans la page panier.php
                         let prixT = 0; //prix total pour x meme produit
                         currentPanier.forEach(e => { //modifie la quantite d'un item pour éviter d'afficher x fois le meme item dans le panier
                            
-                            if (p.Id == e.id) {
+                            if (p.Id == e.Id) {
                                 qt += 1;
                                 prixT += parseFloat(p.Prix);
                             } else {
@@ -38,9 +38,9 @@ function displayPanier() { //affiche le panier dans la page panier.php
                         cp = 1;
                         let index = 0 //index pour enregistrer la position de e dans le tableau panier (utiliser dans supprimer())
                         currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.php
-                            if (p.Id == e.id && cp == 1) {
+                            if (p.Id == e.Id && cp == 1) {
                                 panierHTML = `<tr>
-                            <td>${e.nom}</td>
+                            <td>${e.Nom}</td>
                             <td> ${qt} </td>
                             <td>${prixT.toFixed(2)}$</td>
                             <td><button type="button" onclick="supprimer(${index})"> - </button></td>
@@ -71,11 +71,16 @@ function displayPanier() { //affiche le panier dans la page panier.php
 }
 
 function ajouterAuPanier(itemId) { // Ajout un element au tableau quand on clique sur le bouton pour ajouter un plat
-    fetch('./datajson/menu.json') // lire le fichier JSON menu.json
-        .then(res => res.json())
-        .then(data => {
+    fetch('getMenuBD.php',{
+        "method":"GET", 
+        "headers":{"Content-Type":"application/json; charset=utf-8"}
+    }) //va chercher les elements du menu dans la BD
+        .then(function (res) {
+            return res.json()
+        })
+        .then(function(data){
             let menu = data;//menu obtient les données de data
-            let monItem = menu.find(item => item.id == itemId) // cherche dans le menu un id équivalent au itemId
+            let monItem = menu.find(item => item.Id == itemId) // cherche dans le menu un id équivalent au itemId
             panier.push(monItem);// ajoute au panier
             enregistrerPanier();//enregistre les changements
 

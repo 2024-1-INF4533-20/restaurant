@@ -32,7 +32,7 @@ function payer() {
             let qt = 0; //quantité d'un item ajouté
             let prixT = 0; //prix total pour x meme produit
             currentPanier.forEach(e => { //modifie la quantite d'un item pour éviter d'afficher x fois le meme item dans le panier
-              if (p.id == e.id) {
+              if ((p.id == e.Id || p.id==e.id)) {
                 qt += 1;
 
 
@@ -44,10 +44,11 @@ function payer() {
             
             cp = 1;
             currentPanier.forEach(e => { //boucle pour afficher chaque item du panier dans la page panier.php
-              if (p.id == e.id && cp == 1) {
-                commande.push({ "id": e.id, "qte": qt })
+              if ((p.id == e.Id || p.id==e.id) && cp == 1) {
+                commande.push({ "id": e.Id, "qte": qt })
                 prixTOTAL += prixT;
                 cp++;
+              } else {
               }
 
 
