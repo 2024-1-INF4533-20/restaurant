@@ -15,7 +15,7 @@
 
     <script type="text/javascript" src="panier.js"></script>
   <!-- bootstrap (notre sauveur) -->
-  <script src="commun.js"></script>
+   
 </head>
 
 <body>
