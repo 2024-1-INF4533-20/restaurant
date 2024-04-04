@@ -16,7 +16,7 @@ if(isset($_POST)){
     $adresse=$user["adresse"];
 
     //ouvrir la base de données
-    include_once('introo.php');//inclusion de la base de données
+    include_once('sql.php');//inclusion de la base de données
     //inscrire les données dans la base de données
 
 
