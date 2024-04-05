@@ -23,26 +23,21 @@ function payer() {
       let prixTOTAL = 0;
       currentPanier = JSON.parse(currentPanier);
       panier = currentPanier;
-      fetch('getMenuBD.php',{
-        "method":"GET", 
-        "headers":{"Content-Type":"application/json; charset=utf-8"}
-    }) //va chercher les elements du menu dans menu.json
+      fetch('./datajson/menu.json') //va chercher les elements du menu dans menu.json
         /*
       'getMenuBD.php',{
                 "method":"GET", 
                 "headers":{"Content-Type":"application/json; charset=utf-8"}
             }
       */
-      .then(function (res) {
-        return res.json()
-    })
+      .then(res => res.json())
 
       /*
       function (res) {
                     return res.json()
                 }
       */ 
-        .then(function(data) {
+        .then(data=> {
 
           //function(data)
           let menu = data;

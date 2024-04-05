@@ -12,7 +12,7 @@ function displayPanier() { //affiche le panier dans la page panier.php
             panier = currentPanier;
             let panierHTML = "";
             fetch('getMenuBD.php',{
-                "method":"POST", 
+                "method":"GET", 
                 "headers":{"Content-Type":"application/json; charset=utf-8"}
             }) //va chercher les elements du menu dans la BD
                 .then(function (res) {
