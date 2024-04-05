@@ -23,21 +23,26 @@ function payer() {
       let prixTOTAL = 0;
       currentPanier = JSON.parse(currentPanier);
       panier = currentPanier;
-      fetch('./datajson/menu.json') //va chercher les elements du menu dans menu.json
+      fetch('getMenuBD.php',{
+        "method":"GET", 
+        "headers":{"Content-Type":"application/json; charset=utf-8"}
+    }) //va chercher les elements du menu dans menu.json
         /*
       'getMenuBD.php',{
                 "method":"GET", 
                 "headers":{"Content-Type":"application/json; charset=utf-8"}
             }
       */
-      .then(res => res.json())
+      .then(function (res) {
+        return res.json()
+    })
 
       /*
       function (res) {
                     return res.json()
                 }
       */ 
-        .then(data => {
+        .then(function(data) {
 
           //function(data)
           let menu = data;
@@ -50,8 +55,8 @@ function payer() {
                 qt += 1;
 
 
-                prixT += parseFloat(p.prix);
-               // prixT += parseFloat(p.Prix);
+                //prixT += parseFloat(p.prix);
+                prixT += parseFloat(p.Prix);
               }
             });
 
