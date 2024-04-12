@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `historique`
 --
+CREATE DATABASE IF NOT EXISTS pizza_info;
 
 DROP TABLE IF EXISTS `historique`;
 CREATE TABLE IF NOT EXISTS `historique` (
