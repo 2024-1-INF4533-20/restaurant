@@ -50,8 +50,8 @@ function payer() {
                 qt += 1;
 
 
-                //prixT += parseFloat(p.prix);
-                prixT += parseFloat(p.Prix);
+                prixT += parseFloat(p.prix);
+                //prixT += parseFloat(p.Prix);
               }
             });
 
